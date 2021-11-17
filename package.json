@@ -2,7 +2,7 @@
   "name": "cryptoeconomy",
   "version": "0.1.0",
   "private": true,
-  "main":"public/electron.js",
+  "main": "public/electron.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -14,7 +14,7 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "electron-windev" : "concurrently \"set BROWSER=none&& yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-windev": "concurrently \"set BROWSER=none&& yarn start\" \"wait-on http://localhost:3000 && electron .\"",
     "electron-dev": "concurrently \"BROWSER=none yarn start\" \"wait-on https://localhost:3000 && electron .\"",
     "start": "react-scripts start",
     "build": "react-scripts build",
