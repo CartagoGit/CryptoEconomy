@@ -1,8 +1,7 @@
 {
   "name": "cryptoeconomy",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": true,
-  "main": "public/electron.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -19,13 +18,15 @@
     "react-scripts": "4.0.3",
     "web-vitals": "^1.0.1"
   },
+  "main": "src/main-electron.js",
   "scripts": {
-    "electron-windev": "concurrently \"set BROWSER=none&& yarn start\" \"wait-on http://localhost:3000 && electron .\"",
-    "electron-dev": "concurrently \"BROWSER=none yarn start\" \"wait-on https://localhost:3000 && electron .\"",
-    "start": "react-scripts start",
+    "electron-windev": "electron test/main.js",
+    "electron-dev": "electron test/main.js",
+    "start":  "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "electron": "electron ."
   },
   "eslintConfig": {
     "extends": [
