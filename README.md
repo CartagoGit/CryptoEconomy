@@ -25,3 +25,5 @@ Proyecto para crear una aplicación de escritorio adaptable a web con electron y
 10.`yarn add @types/node@latest --dev` - Dependencia para añadir el tipado para modulos
 
 ### Opcional Para Colgar el trabajo en sitios distribuidos para que puedan usarlo otras personas: `yarn create @electron-forge/cli import`
+
+### [https://mmazzarolo.com/blog/2021-08-12-building-an-electron-application-using-create-react-app/] Tutorial para iniciar en Electron
