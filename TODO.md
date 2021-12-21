@@ -1,6 +1,7 @@
 # Objetivos
 
-0. Pantalla de carga de la Aplicacion
+~~0.Pantalla de carga de la Aplicacion - HECHO~~
+
 1. HTML la pagina globalmente
 2. HTML sus componentes principales
 3. Componente de rutas
