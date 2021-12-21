@@ -13,16 +13,18 @@ const createWindow = () => {
 	const win = new BrowserWindow({
 		show: false,
 		webPreferences: {
+			// preload: path.join(__dirname, "preload.js"),
 			nodeIntegration: true
 		}
 	});
+	isDev ? win.setAutoHideMenuBar(true) : win.removeMenu();
 	win.maximize();
 
 	// Cargamos el servidor de React en modo desarrollo, y el index.html en producción
 	win.loadURL(
 		isDev
 			? "http://localhost:3000"
-			: `file://${path.join(__dirname, "..build/index.html")}`
+			: `file://${path.join(__dirname, "./index.html")}`
 	);
 
 	//En modo desarrollo habilitamos el panel de desarrollo de F12 del explorador

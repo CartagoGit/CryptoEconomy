@@ -12,6 +12,7 @@
 		"@testing-library/jest-dom": "^5.16.1",
 		"@testing-library/react": "^12.1.2",
 		"@testing-library/user-event": "^13.5.0",
+		"electron-devtools-installer": "^3.2.0",
 		"electron-is-dev": "^2.0.0",
 		"eslint-config-react-app": "^7.0.0",
 		"react": "^17.0.2",
@@ -25,7 +26,6 @@
 		"cross-env": "^7.0.3",
 		"electron": "^16.0.5",
 		"electron-builder": "^22.14.5",
-		"electron-devtools-installer": "^3.2.0",
 		"electronmon": "^2.0.2",
 		"wait-on": "^6.0.0"
 	},
@@ -52,26 +52,38 @@
 		],
 		"development": [
 			"last 1 electron version"
+		]
+	},
+	"build": {
+		"appId": "com.electron.cryptoeconomy",
+		"productName": "CryptoEconomy",
+		"compression": "store",
+		"files": [
+			"build/**/*",
+			"node_modules/**/*"
 		],
-		"build": {
-			"appId": "com.electron.cryptoeconomy",
-			"productName": "CryptoEconomy App",
-			"files": [
-				"build/**/*",
-				"node_modules/**/*"
-			],
-			"directories": {
-				"buildResources": "public"
-			},
-			"mac": {
-				"target": "dmg"
-			},
-			"win": {
-				"target": "nsis"
-			},
-			"linux": {
-				"target": "deb"
-			}
+		"directories": {
+			"buildResources": "public"
+		},
+		"mac": {
+			"target": "dmg"
+		},
+		"win": {
+			"target": [
+				"nsis",
+				"portable"
+			]
+		},
+		"nsis": {
+			"unicode": false,
+			"artifactName": "${productName}Installer${version}.${ext}"
+		},
+		"portable": {
+			"unicode": false,
+			"artifactName": "${productName}Portable${version}.${ext}"
+		},
+		"linux": {
+			"target": "deb"
 		}
 	}
 }

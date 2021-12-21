@@ -1,7 +1,7 @@
 import React from "react";
-
+import './styles/cryptoEconomyApp.css';
 export const CryptoEconomyApp = () => {
-	return <div>CryptoEconomyScreen</div>;
+	return <div className="prueba">CryptoEconomyScreen</div>;
 };
 
 
