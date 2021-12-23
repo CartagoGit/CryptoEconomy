@@ -26,6 +26,20 @@ Proyecto para crear una aplicación de escritorio adaptable a web con electron y
 
 11.`yarn add electron-prebuilt-compile@latest --dev` - Dependencia para cargar ES6+React+Less entre otros lenguajes en electron
 
+12.`yarn add redux@latest react-redux@latest thunk@latest` Instalamos redux, react-redux y el middleware thunk para usarlos junto a react
+
+13.`yarn add electron-alert@latest` electron-alert para usar alertas de sweetalert2 en el main de lectron
+
+14.`yarn add @types/electron-alert@latest --dev` tipado para las alertas
+
+15.`yarn add sweetalert2@latest` Dependencia para los modales
+
+16.`yarn add sass@latest` Para incorporar sass en React
+
+17.`yarn add uuid@latest` Para crear ids unicos y aleatorios
+
+18.`yarn add moment@latest` Para trabajar con fechas
+
 ### Opcional Para Colgar el trabajo en sitios distribuidos para que puedan usarlo otras personas: `yarn create @electron-forge/cli import`
 
 ### [https://mmazzarolo.com/blog/2021-08-12-building-an-electron-application-using-create-react-app/] Un tutorial para iniciar en Electron

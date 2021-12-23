@@ -1,7 +1,11 @@
 const path = require("path");
+const process = require("process");
 
 const { app, BrowserWindow } = require("electron");
 const isDev = require("electron-is-dev");
+
+const Alert = require("electron-alert");
+const alert = new Alert();
 
 // Para cargar las extensiones de desarrollo de chrome dentro de electron
 const {
@@ -12,6 +16,9 @@ const {
 
 // app.commandLine.appendSwitch("auto-detect", "false");
 // app.commandLine.appendSwitch("no-proxy-server");
+// app.commandLine.appendSwitch("disable-features", "OutOfBlinkCors");
+// app.commandLine.appendSwitch("disable-site-isolation-trials");
+// app.commandLine.appendSwitch("disable-web-security");
 
 const createMainWindow = () => {
 	//Creando la ventana de la aplicacion
@@ -43,7 +50,7 @@ const createMainWindow = () => {
 		win.maximize();
 		win.show();
 	});
-
+	win.on("closed", () => (win = null));
 	win.once("closed", () => {
 		app.quit();
 	});
@@ -60,6 +67,7 @@ const createLoading = () => {
 		transparent: true
 	});
 	if (isDev) loadingWindow.webContents.openDevTools({ mode: "undocked" });
+	// throw new Error();
 	loadingWindow.setResizable(false);
 	loadingWindow.loadURL(`file://${__dirname}/loading.html`);
 	loadingWindow.center();
@@ -74,13 +82,23 @@ const createLoading = () => {
 // Este metodo es llamado cuando electorn ha terminado la iniciacion y esta preparado para crear la ventanta del explorador
 // Algunas APIs solo pueden ser usadas despues de que este evento ocurra
 app.whenReady().then(() => {
-	createLoading();
-	installExtension([REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS])
-		.then((name) => console.log(`Added Extension:  ${name}`))
-		.catch((err) => console.log("An error occurred: ", err));
-	setTimeout(() => {
-		// createMainWindow();
-	}, 4000);
+	try {
+		createLoading();
+		installExtension([REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS])
+			.then((name) => console.log(`Added Extension:  ${name}`))
+			.catch((err) => console.log("An error occurred: ", err));
+		setTimeout(() => {
+			createMainWindow();
+		}, 4000);
+	} catch (error) {
+		app.quit();
+		const swalOptions = {
+			title: "Error",
+			html: `Error al cargar la aplicación, contacta con el creador:<br/> ${error}`,
+			icon: "error"
+		};
+		alert.fireFrameless(swalOptions);
+	}
 });
 
 // Cerrar cuando todas las ventanas han sido cerradas. En mac hay que cerrar el proceso (darwin determina que es macOS)
@@ -95,4 +113,9 @@ app.on("activate", () => {
 	if (BrowserWindow.getAllWindows().length === 0) {
 		createMainWindow();
 	}
+});
+
+process.on("uncaughtException", function (err) {});
+app.on("error", () => {
+	console.log("app -< error");
 });

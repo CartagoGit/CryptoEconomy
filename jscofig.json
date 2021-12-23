@@ -1,0 +1,10 @@
+{
+	"typeAcquisition": {
+		"include": ["public/*", "/src/**/*", "jsx"]
+	},
+	"compilerOptions": {
+		"module": "commonjs",
+		"target": "es6",
+		"jsx": "react"
+	}
+}
