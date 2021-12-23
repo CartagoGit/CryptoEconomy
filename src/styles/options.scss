@@ -1,0 +1,22 @@
+.options-fill {
+	position: fixed;
+	bottom: 0px;
+	justify-content: center;
+	width: 100vw;
+    z-index: 1;
+
+	.options {
+		border-radius: 50px 50px 0px 0px;
+		flex-direction: row;
+		background-color: green;
+		overflow: hidden;
+
+		div {
+			border-left: 1px solid black;
+			border-right: 1px solid black;
+			padding: 20px;
+			padding-bottom: 25px;
+			cursor: pointer;
+		}
+	}
+}

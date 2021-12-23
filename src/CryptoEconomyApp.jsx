@@ -1,14 +1,18 @@
 import React from "react";
-import { swalBasic } from "./helpers/alerts";
+import { Provider } from "react-redux";
+import { FilterBar } from "./components/filter/FilterBar";
+import { MenuBar } from "./components/menu/MenuBar";
+import { OptionsBar } from "./components/options/OptionsBar";
+import { AppRouter } from "./routers/AppRouter";
+import { store } from "./store/store";
 
 export const CryptoEconomyApp = () => {
-	const handleClick = () => {
-		swalBasic("Exitoso", "He creado mi propio swal personalizado", "success");
-	};
 	return (
-		<>
-			<button onClick={handleClick}>Swal</button>
-			<div className='prueba'>CryptoEconomyScreen</div>
-		</>
+		<Provider store={store}>
+			<MenuBar />
+			<FilterBar />
+			<OptionsBar />
+			<AppRouter />
+		</Provider>
 	);
 };

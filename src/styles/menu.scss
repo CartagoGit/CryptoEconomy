@@ -1,0 +1,22 @@
+.menu-fill {
+	position: fixed;
+	top: 0px;
+	justify-content: center;
+	width: 100vw;
+    z-index: 1;
+
+	.menu {
+		background-color: red;
+		border-radius: 0px 0px 50px 50px;
+		flex-direction: row;
+		overflow: hidden;
+
+		div {
+			border-left: 1px solid black;
+			border-right: 1px solid black;
+			padding: 35px;
+			padding-top: 20px;
+			cursor: pointer;
+		}
+	}
+}

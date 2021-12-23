@@ -1,0 +1,22 @@
+.filter-fill {
+	position: fixed;
+	right: 0px;
+	align-items: center;
+	height: 100vh;
+	z-index: 1;
+
+	.filter {
+		background-color: purple;
+		border-radius: 50px 0px 0px 50px;
+		flex-direction: column;
+		overflow: hidden;
+
+		div {
+			border-top: 1px solid black;
+			border-bottom: 1px solid black;
+			padding: 35px;
+			// padding-top: 20px;
+			cursor: pointer;
+		}
+	}
+}
