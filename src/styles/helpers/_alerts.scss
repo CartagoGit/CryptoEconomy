@@ -1,0 +1,102 @@
+@import "../base/settings";
+
+.swal2-container {
+	overflow-y: hidden !important;
+	// position: fixed;
+
+	.customSwal {
+		position: relative;
+		border-radius: 15%;
+		background: $bgPrimary;
+		background-size: cover;
+		background-attachment: fixed; 
+		color: $letterSecondary;
+		width: null;
+		max-width: 500px;
+		overflow: hidden;
+		border: 5px solid $borderPrimary;
+		box-shadow: 0px 0px 15px $bsPrimary;
+		&* {
+			z-index: 1;
+		}
+	}
+	.swal2-title {
+		z-index: 1;
+	}
+	.swal2-footer {
+		border: 0px;
+	}
+
+	.swal2-icon.swal2-info {
+		color: $info;
+		// border-color: $borderPrimary;
+	}
+	.swal2-warning.swal2-warning {
+		color: $warning;
+		border-color: $warning;
+	}
+
+	.swal-wave {
+		z-index: 0;
+		opacity: 70%;
+		border: 0px;
+		background: $wave repeat;
+		position: absolute;
+		bottom: -40px;
+		width: 6400px;
+		height: 198px;
+		// animation: wave 60s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+		animation: swalWave 14s linear infinite, swalSwell 7s ease -1.25s infinite;
+		transform: translate3d(0, 0, 0);
+	}
+	.swal-wave:nth-of-type(2) {
+		z-index: 0;
+		opacity: 70%;
+		bottom: -55px;
+		// animation: wave 75s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite,
+		animation: swalWave 17s linear infinite, swalSwell 7s ease -1.25s infinite;
+	}
+	@keyframes swalWave {
+		0% {
+			background-position: 0;
+		}
+		100% {
+			background-position: -1600px;
+		}
+	}
+	@keyframes swalSwell {
+		0%,
+		100% {
+			transform: translate3d(0, -25px, 0);
+		}
+		50% {
+			transform: translate3d(0, 5px, 0);
+		}
+	}
+
+	.swal2-confirm,
+	.swal2-deny,
+	.swal2-cancel {
+		cursor: pointer;
+		padding: 5px 12px;
+		border: 5px solid $borderSecondary;
+		color: $letterPrimary;
+		font-size: 1.125em;
+		border-radius: 0.25em;
+		background: $bgSecondary;
+		background-color: $bgSecondary;
+		margin: 0.3125em;
+		transition: box-shadow 0.1s;
+		box-shadow: $bsPrimary 0 0 0 3px transparent;
+		font-weight: bold;
+		transition: color 500ms ease;
+		transition: background-color 500ms ease;
+		transition: border-color 500ms ease;
+
+		&:hover {
+			color: $letterSecondary;
+			background-color: $bgPrimary;
+			border-color: $borderPrimary;
+		}
+	}
+}

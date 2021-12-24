@@ -1,14 +1,12 @@
-import React, { useEffect } from "react";
 import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
-import {MainScreen} from '../components/main/MainScreen'
+import { ListCryptos } from "../components/main/contain/ListCryptos";
 
 export const AppRouter = () => {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path='/' element={<MainScreen />} />
+				<Route path='/' element={<ListCryptos />} />
 				<Route path='/*' element={<Navigate to='/' />} />
-
 			</Routes>
 		</BrowserRouter>
 	);

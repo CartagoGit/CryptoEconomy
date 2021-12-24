@@ -88,7 +88,7 @@
 	opacity: 85%;
 }
 .wave {
-	background: url("../assets/svgs/wave.svg") repeat-x;
+	background: url("./wave.svg") repeat-x;
 	position: absolute;
 	bottom: 0;
 	width: 6400px;

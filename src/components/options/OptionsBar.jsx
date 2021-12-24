@@ -1,5 +1,4 @@
 import React from "react";
-import "../../styles/options.scss";
 export const OptionsBar = () => {
 	return (
 		<footer className='options-fill'>

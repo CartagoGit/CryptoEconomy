@@ -1,5 +1,4 @@
 import React from "react";
-import "../../styles/menu.scss";
 export const MenuBar = () => {
 	return (
 		<header className='menu-fill'>

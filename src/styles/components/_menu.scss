@@ -10,6 +10,7 @@
 		border-radius: 0px 0px 50px 50px;
 		flex-direction: row;
 		overflow: hidden;
+		box-shadow: $box-shadow;
 
 		div {
 			border-left: 1px solid black;

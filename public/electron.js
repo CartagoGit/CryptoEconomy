@@ -1,31 +1,34 @@
 const path = require("path");
-const process = require("process");
 
 const { app, BrowserWindow } = require("electron");
 const isDev = require("electron-is-dev");
-
-const Alert = require("electron-alert");
-const alert = new Alert();
 
 // Para cargar las extensiones de desarrollo de chrome dentro de electron
 const {
 	default: installExtension,
 	REACT_DEVELOPER_TOOLS,
 	REDUX_DEVTOOLS
-} = require("electron-devtools-installer");
+} = isDev && require("electron-devtools-installer"); 
+// } = require("electron-devtools-installer");
 
 // app.commandLine.appendSwitch("auto-detect", "false");
 // app.commandLine.appendSwitch("no-proxy-server");
 // app.commandLine.appendSwitch("disable-features", "OutOfBlinkCors");
 // app.commandLine.appendSwitch("disable-site-isolation-trials");
 // app.commandLine.appendSwitch("disable-web-security");
+// app.commandLine.appendSwitch("enable-gpu-rasterization");
+
+// app.disableHardwareAcceleration();
+app.enableSandbox();
 
 const createMainWindow = () => {
 	//Creando la ventana de la aplicacion
-	const win = new BrowserWindow({
+	let win = new BrowserWindow({
 		show: false,
+		backgroundThrottling: false,
 		webPreferences: {
 			// preload: path.join(__dirname, "preload.js"),
+			// sandbox: false,
 			nodeIntegration: true
 		}
 	});
@@ -40,18 +43,20 @@ const createMainWindow = () => {
 
 	//En modo desarrollo habilitamos el panel de desarrollo de F12 del explorador
 	if (isDev) win.webContents.openDevTools({ mode: "undocked" });
+	// win.webContents.openDevTools({ mode: "undocked" });
 
 	win.webContents.on("did-finish-load", () => {
 		if (loadingWindow) {
 			loadingWindow.hide();
 			loadingWindow.close();
 			loadingWindow.destroy();
+			// if (loadingWindow) loadingWindow = null;
 		}
 		win.maximize();
 		win.show();
 	});
-	win.on("closed", () => (win = null));
 	win.once("closed", () => {
+		win = null;
 		app.quit();
 	});
 };
@@ -66,14 +71,15 @@ const createLoading = () => {
 		alwaysOnTop: true,
 		transparent: true
 	});
-	if (isDev) loadingWindow.webContents.openDevTools({ mode: "undocked" });
+	// if (isDev) loadingWindow.webContents.openDevTools({ mode: "undocked" });
+	// loadingWindow.webContents.openDevTools({ mode: "undocked" });
 	// throw new Error();
 	loadingWindow.setResizable(false);
 	loadingWindow.loadURL(`file://${__dirname}/loading.html`);
 	loadingWindow.center();
 
 	loadingWindow.setIgnoreMouseEvents(true);
-	loadingWindow.on("closed", () => (loadingWindow = null));
+	// loadingWindow.on("closed", () => ();
 	loadingWindow.webContents.on("did-finish-load", () => {
 		loadingWindow.show();
 	});
@@ -84,14 +90,18 @@ const createLoading = () => {
 app.whenReady().then(() => {
 	try {
 		createLoading();
-		installExtension([REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS])
-			.then((name) => console.log(`Added Extension:  ${name}`))
-			.catch((err) => console.log("An error occurred: ", err));
-		setTimeout(() => {
+		// setTimeout(() => {
 			createMainWindow();
-		}, 4000);
+			// }, 4000);
+			if (isDev) {
+				installExtension([REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS])
+					.then((name) => console.log(`Added Extension:  ${name}`))
+					.catch((err) => console.log("An error occurred: ", err));
+			}
 	} catch (error) {
 		app.quit();
+		const Alert = require("electron-alert");
+		const alert = new Alert();
 		const swalOptions = {
 			title: "Error",
 			html: `Error al cargar la aplicación, contacta con el creador:<br/> ${error}`,
@@ -113,9 +123,4 @@ app.on("activate", () => {
 	if (BrowserWindow.getAllWindows().length === 0) {
 		createMainWindow();
 	}
-});
-
-process.on("uncaughtException", function (err) {});
-app.on("error", () => {
-	console.log("app -< error");
 });

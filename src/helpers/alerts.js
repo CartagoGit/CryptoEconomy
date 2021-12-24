@@ -1,7 +1,6 @@
 //Swal con estilo personalizado y animado
 
 import Swal from "sweetalert2";
-import "../styles/alerts.scss";
 
 let swalParams = {
 	title: null,
@@ -10,17 +9,23 @@ let swalParams = {
 	customClass: "customSwal",
 	buttonsStyling: false,
 	showClass: {
-		popup: "animate__animated animate__fadeInDown animate__faster"
+		popup: "animate__animated animate__fadeInDown animate__faster",
+		backdrop: "swal2-backdrop-show",
+		icon: "swal2-icon-show"
 	},
 	hideClass: {
-		popup: "animate__animated animate__fadeOutDown animate__faster"
+		popup: "animate__animated animate__fadeOutDown animate__faster",
+		backdrop: "swal2-backdrop-hide",
+		icon: "swal2-icon-hide"
 	},
-	footer: '<div class="wave"></div><div class="wave"></div>'
+	footer: '<div class="swal-wave"></div><div class="swal-wave"></div>',
+	heightAuto: false,
+	backdrop: false
 };
 
 const setSwalParams = (title, text, icon) => {
 	swalParams = {
-        ...swalParams,
+		...swalParams,
 		title,
 		text,
 		icon

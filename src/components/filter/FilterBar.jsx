@@ -1,5 +1,4 @@
 import React from "react";
-import "../../styles/filter.scss";
 export const FilterBar = () => {
 	return (
 		<div className='filter-fill'>

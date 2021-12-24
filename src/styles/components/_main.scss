@@ -1,0 +1,119 @@
+
+
+.main-fill {
+	font-family: "Times New Roman", Times, serif;
+	letter-spacing: 0.02em;
+	font-size: 17px;
+	justify-content: center;
+	align-items: center;
+	z-index: 0;
+	background: inherit;
+	background-size: cover;
+	background-attachment: fixed;
+	position: relative;
+	overflow-x: hidden;
+	* {
+		z-index: 0;
+		
+	}
+	.main {
+		height: 100%;
+		width: 100vw;
+		// padding-bottom: 30px;
+		overflow-x: hidden;
+		flex-direction: column;
+		.info {
+			overflow: hidden;
+			height: 30px;
+			color: $secondary;
+			margin-right: 50px;
+			margin-left: 50px;
+			margin-top: 12px;
+			margin-bottom: 12px;
+			padding: 20px;
+			justify-content: space-between;
+			align-items: center;
+			z-index: 1;
+			.nameApp {
+				font-weight: bold;
+			}
+		}
+		.container {
+			width: auto;
+			height: auto;
+			border: 4px solid $borderSecondary;
+			border-radius: 50px;
+			// background-color: yellow;
+			box-shadow: $box-shadow;
+			margin-right: 30px;
+			margin-left: 30px;
+			padding: 40px;
+			padding-top: 20px;
+			padding-bottom: 40px;
+			flex-direction: column;
+			div {
+				margin-top: 5px;
+				margin-bottom: 5px;
+			}
+		}
+		.foot{
+			overflow: hidden;
+			height: 30px;
+			color: $secondary;
+			margin-right: 50px;
+			margin-left: 50px;
+			padding: 20px;
+			justify-content: end;
+			align-items: center;
+			z-index: 1;
+		}
+	}
+
+	.wave {
+		overflow-x: hidden;
+		position: fixed;
+		z-index: 0;
+		opacity: 70%;
+		border: 0px;
+		background: $wave repeat;
+
+		// position: absolute;
+		bottom: -20px;
+		width: 6400px;
+		height: 195px;
+		// animation: wave 60s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+		animation: wave 14s linear infinite, swell 7s ease -1.25s infinite;
+		transform: translate3d(0, 0, 0);
+	}
+	.wave:nth-of-type(2) {
+		z-index: 0;
+		opacity: 750%;
+		bottom: -35px;
+		// animation: wave 75s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite,
+		animation: wave 17s linear infinite, swell 5s ease -0.25s infinite;
+	}
+	.wave:nth-of-type(3) {
+		z-index: 0;
+		opacity: 40%;
+		bottom: -25px;
+		// animation: wave 75s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite,
+		animation: wave 20s linear infinite, swell 10s ease -0.75s infinite;
+	}
+	@keyframes wave {
+		0% {
+			background-position: 0;
+		}
+		100% {
+			background-position: -1600px;
+		}
+	}
+	@keyframes swell {
+		0%,
+		100% {
+			transform: translate3d(0, -25px, 0);
+		}
+		50% {
+			transform: translate3d(0, 5px, 0);
+		}
+	}
+}

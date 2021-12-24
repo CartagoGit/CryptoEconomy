@@ -49,7 +49,8 @@
 		"electron": "wait-on tcp:3000 && electron .",
 		"electron:package:mac": "yarn build && electron-builder -m -c.extraMetadata.main=build/electron.js",
 		"electron:package:win": "yarn build && electron-builder -w -c.extraMetadata.main=build/electron.js",
-		"electron:package:linux": "yarn build && electron-builder -l -c.extraMetadata.main=build/electron.js"
+		"electron:package:linux": "yarn build && electron-builder -l -c.extraMetadata.main=build/electron.js",
+		"unpackage": "yarn build && electron-builder --dir"
 	},
 	"eslintConfig": {
 		"extends": [
@@ -76,9 +77,15 @@
 		"directories": {
 			"buildResources": "public"
 		},
-		"mac": {
-			"target": "dmg"
-		},
+		"extraResources": [
+			{
+				"from": "assets/",
+				"to": "assets/",
+				"filter": [
+					"**/*"
+				]
+			}
+		],
 		"win": {
 			"target": [
 				"nsis",
@@ -95,6 +102,9 @@
 		},
 		"linux": {
 			"target": "deb"
+		},
+		"mac": {
+			"target": "dmg"
 		}
 	}
 }

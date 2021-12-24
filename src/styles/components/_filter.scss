@@ -1,7 +1,7 @@
 .filter-fill {
 	position: fixed;
-	right: 0px;
 	align-items: center;
+	right: 20px;
 	height: 100vh;
 	z-index: 1;
 
@@ -10,6 +10,7 @@
 		border-radius: 50px 0px 0px 50px;
 		flex-direction: column;
 		overflow: hidden;
+		box-shadow: $box-shadow;
 
 		div {
 			border-top: 1px solid black;

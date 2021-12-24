@@ -1,10 +1,11 @@
 import React from "react";
 import { Provider } from "react-redux";
 import { FilterBar } from "./components/filter/FilterBar";
+import { MainScreen } from "./components/main/MainScreen";
 import { MenuBar } from "./components/menu/MenuBar";
 import { OptionsBar } from "./components/options/OptionsBar";
-import { AppRouter } from "./routers/AppRouter";
 import { store } from "./store/store";
+import "./styles/styles.scss";
 
 export const CryptoEconomyApp = () => {
 	return (
@@ -12,7 +13,7 @@ export const CryptoEconomyApp = () => {
 			<MenuBar />
 			<FilterBar />
 			<OptionsBar />
-			<AppRouter />
+			<MainScreen />
 		</Provider>
 	);
 };

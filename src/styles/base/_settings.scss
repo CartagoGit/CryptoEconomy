@@ -1,0 +1,33 @@
+// basic colors
+$primary: #002731;
+$secondary: #fff;
+$tertiary: #000;
+
+// Basic assets
+$wave: url("../../assets/svgs/wave.svg");
+
+//Bg Colors
+$bgPrimary: $primary;
+$bgSecondary: $secondary;
+
+//Border Colors
+$borderPrimary: $secondary;
+$borderSecondary: $primary;
+
+// letter color
+$letterPrimary: $tertiary;
+$letterSecondary: $secondary;
+$letterTertiary: $primary;
+
+// box-shadow Color
+$bsPrimary: $tertiary;
+
+// icon-colors
+$warning: #bda102;
+$info: #d7d7d7;
+$question: #87adbd;
+$success: #a5dc86;
+$error: #f27474;
+
+// box-shadow
+$box-shadow:  0px 0px 15px $bsPrimary;
