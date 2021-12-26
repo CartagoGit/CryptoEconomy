@@ -18,5 +18,5 @@
 16. Crear base de datos basica
 17. Hacer que los enlaces de twitter, github, etc aparezcan en el main.
 18. ~~Crear enlaces a paginas principales del menu~~
-19. Comprobar que el elemento en el navegador es el activo
+19. ~~Comprobar que el elemento en el navegador es el activo~~
 20. Guardar la localizacion de la ultima ruta para el inicio de sesion
