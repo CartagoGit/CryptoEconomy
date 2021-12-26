@@ -6,19 +6,35 @@
 	pointer-events: none;
 	z-index: 10;
 	.menu {
-		background-color: orange;
+		font-size: larger;
+		font-weight: bold;
+		background: $bgMenu;
 		border-radius: 0px 0px 50px 50px;
 		flex-direction: row;
 		overflow: hidden;
 		box-shadow: $box-shadow;
-		pointer-events:auto;
 
+		color: $letterSecondary;
+		font-weight: bold;
+		border: $borderSecondary-2;
+		border-top: none;
 		div {
-			border-left: 1px solid black;
-			border-right: 1px solid black;
-			padding: 35px;
-			padding-top: 20px;
+			pointer-events: auto;
+			border-left: $borderSecondary-1;
+			border-right: $borderSecondary-1;
+			
+			padding: 30px;
+			// padding-top: 20px;
 			cursor: pointer;
+			&:hover {
+				background-color: $bgSecondary;
+				color: $ninth;
+				box-shadow: $box-shadow;
+				// border: $borderPrimary-2;
+				-webkit-transition: background-color 200ms linear;
+				-ms-transition: background-color 200ms linear;
+				transition: background-color 200ms linear;
+			}
 		}
 	}
 }

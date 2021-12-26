@@ -3,21 +3,34 @@
 	bottom: 0px;
 	justify-content: center;
 	width: 100vw;
-    z-index: 10;
+	z-index: 10;
+	pointer-events: none;
 
 	.options {
 		border-radius: 50px 50px 0px 0px;
 		flex-direction: row;
-		background-color: green;
+		background: $bgOptions;
 		overflow: hidden;
 		box-shadow: $box-shadow;
-
+		color: $letterSecondary;
+		
+		border: $borderNinth-3;
+		border-bottom: none;
 		div {
-			border-left: 1px solid black;
-			border-right: 1px solid black;
-			padding: 20px;
-			padding-bottom: 25px;
+			pointer-events: auto;
 			cursor: pointer;
+			border-left: $borderNinth-1;
+			border-right: $borderNinth-1;
+			padding: 20px;
+			// padding-bottom: 25px;
+			cursor: pointer;
+			&:hover {
+				box-shadow: $box-shadow;
+				background: $primary;
+				-webkit-transition: background-color 200ms linear;
+				-ms-transition: background-color 200ms linear;
+				transition: background-color 200ms linear;
+			}
 		}
 	}
 }

@@ -5,7 +5,7 @@ export const MainScreen = () => {
 	return (
 		<main className='main-fill'>
 			<div className='main'>
-				<div className='info'>
+				<div className='info no-selectable'>
 					<div className='logoApp'>el logo</div>
 					<div className='nameApp'>CryptoEconomy ©</div>
 				</div>
@@ -163,7 +163,18 @@ export const MainScreen = () => {
 					</div>
 				</div>
 				<footer className='foot'>
-					<div className='createdBy'>Created by Cartago ©</div>
+					<div className='social'>
+						<a href='https://github.com/CartagoGit' target="_blank">
+							<span className='fab fa-github'></span>
+						</a>
+						<a href='https://twitter.com/cartago_rcg' target="_blank">
+							<span className='fab fa-twitter-square'></span>
+						</a>
+						<a href='mailto:cartago.relaxingcup@gmail.com' target="_blank">
+							<span className='fas fa-at'></span>
+						</a>
+					</div>
+					<div className='createdBy no-selectable'>Created by Cartago © </div>
 				</footer>
 			</div>
 		</main>

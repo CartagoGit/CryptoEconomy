@@ -3,11 +3,11 @@ export const MenuBar = () => {
 	return (
 		<header className='menu-fill no-selectable'>
 			<div className='menu'>
-				<div>Option 1</div>
-				<div>Option 1</div>
-				<div>Option 1</div>
-				<div>Option 1</div>
-				<div>Option 1</div>
+				<div>CryptoMonedas</div>
+				<div>Tokens</div>
+				<div>Portafolio</div>
+				<div>Trades</div>
+				<div>Cuentas</div>
 			</div>
 		</header>
 	);

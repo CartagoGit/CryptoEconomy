@@ -8,18 +8,25 @@ $fifth: rgb(236, 236, 236);
 $sixth: #4b4b4b;
 $seventh: #34363e;
 $eight: #1d1e22;
+$ninth: #1d6a78;
+$tenth: #14505b;
+$eleventh: #d3d3d3;
 
-// main colors
+// main colors - bg and main
 $bgEverything: linear-gradient(rgba($eight, 1), rgba($tertiary, 1));
 $bgEverythingInverse: linear-gradient(rgba($tertiary, 1), rgba($eight, 1));
-
 $bgZero: linear-gradient(rgba($zero, 1), rgba($primary, 1));
 $bgZeroInverse: linear-gradient(rgba($primary, 1), rgba($zero, 1));
-// $bgZero: $zero;
 $borderZero: $sixth solid 1px;
 $textZero: $fifth;
 $box-shadowZero: 0px 0px 15px $secondary;
 $border-radiusZero: 5px;
+
+// Menus
+$bgWhiteGradient: linear-gradient(rgba($fifth, 1), rgba($eleventh, 1));
+$bgFilter: linear-gradient(rgba($primary, 1), rgba($forth, 1));
+$bgOptions: linear-gradient(rgba($ninth, 1), rgba($tenth, 1));
+$bgMenu: linear-gradient(rgba($ninth, 1), rgba($tenth, 1));
 
 // Basic assets
 $wave: url("../../assets/svgs/wave.svg");
@@ -40,6 +47,11 @@ $borderSecondary-3: 3px solid $secondary;
 $borderSecondary-5: 5px solid $secondary;
 $borderTertiary-1: 1px solid $tertiary;
 $borderSixth-1: 1px solid $sixth;
+$borderSixth-2: 2px solid $sixth;
+$borderSixth-3: 3px solid $sixth;
+$borderNinth-1: 1px solid $ninth;
+$borderNinth-2: 2px solid $ninth;
+$borderNinth-3: 3px solid $ninth;
 
 // letter color
 $letterPrimary: $tertiary;

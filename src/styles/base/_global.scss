@@ -11,6 +11,10 @@ body {
 	background: $bgEverything;
 	background-attachment: fixed;
 }
+a{
+	text-decoration: none;
+	color: $letterSecondary;
+}
 
 * {
 	box-sizing: border-box;

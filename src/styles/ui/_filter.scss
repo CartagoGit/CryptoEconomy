@@ -25,10 +25,10 @@
 	}
 	.filter {
 		// margin: auto;
-		border-top: $borderSecondary-1;
-		border-left: $borderSecondary-1;
-		border-bottom: $borderSecondary-1;
-		background: $bgPrimary;
+		border: $borderNinth-3;
+		border-right: none;
+		
+		background: $bgFilter;
 		border-radius: 20px 0px 0px 20px;
 		flex-direction: column;
 		overflow: hidden;
@@ -38,8 +38,8 @@
 		transition: ease 0.3 all;
 		div {
 			color: $textZero;
-			border-top: $borderSixth-1;
-			border-bottom: $borderSecondary-1;
+			border-top: $borderNinth-1;
+			border-bottom: $borderTertiary-1;
 			padding: 35px;
 			cursor: pointer;
 		}
