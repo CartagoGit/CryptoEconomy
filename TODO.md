@@ -8,7 +8,8 @@
 6. Estilos basicos al main y fondo de pantalla
 7. Estilos basicos a los botones
 8. Estilos basicos a las opciones
-9. Estilos basicos a al filtro y añadir boton para ocular y mostrar
+9. ~~Estilos basicos a al filtro y añadir boton para ocultar y mostrar~~
 10. ~~Arreglar recursos y assets de Electron~~
 11. ~~Arreglar las perdidas de fps de Electron~~ Arreglado eliminando animacion de fondo
 12. ~~Evitar que los swal puedan cerrarse pulsando fuera. Obligar a pulsar algun boton del panel.~~
+13. ~~Toggle para ocultar menu de filtros~~
