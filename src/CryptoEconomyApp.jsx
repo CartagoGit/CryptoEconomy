@@ -1,5 +1,6 @@
 import React from "react";
 import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
 import { MainScreen } from "./components/main/MainScreen";
 import { FilterBar } from "./components/ui/filter/FilterBar";
 import { MenuBar } from "./components/ui/menu/MenuBar";
@@ -12,10 +13,12 @@ export const CryptoEconomyApp = () => {
 	return (
 		<>
 			<Provider store={store}>
-				<MenuBar />
-				<FilterBar />
-				<OptionsBar />
-				<MainScreen />
+				<BrowserRouter>
+					<MenuBar />
+					<FilterBar />
+					<OptionsBar />
+					<MainScreen />
+				</BrowserRouter>
 			</Provider>
 		</>
 	);

@@ -8,7 +8,7 @@ const {
 	default: installExtension,
 	REACT_DEVELOPER_TOOLS,
 	REDUX_DEVTOOLS
-} = isDev && require("electron-devtools-installer"); 
+} = isDev && require("electron-devtools-installer");
 // } = require("electron-devtools-installer");
 
 // app.commandLine.appendSwitch("auto-detect", "false");
@@ -19,17 +19,21 @@ const {
 // app.commandLine.appendSwitch("enable-gpu-rasterization");
 
 // app.disableHardwareAcceleration();
-app.enableSandbox();
+// app.enableHardwareAcceleration();
+// app.enableSandbox();
 
 const createMainWindow = () => {
 	//Creando la ventana de la aplicacion
 	let win = new BrowserWindow({
 		show: false,
-		backgroundThrottling: false,
+		// backgroundThrottling: true,
+
 		webPreferences: {
 			// preload: path.join(__dirname, "preload.js"),
-			// sandbox: false,
-			nodeIntegration: true
+			// enableRemoteModule: false,
+			// contextIsolation: true,
+			// sandbox: true,
+			nodeIntegration: false
 		}
 	});
 	isDev ? win.setAutoHideMenuBar(true) : win.removeMenu();
@@ -40,9 +44,11 @@ const createMainWindow = () => {
 			? "http://localhost:3000"
 			: `file://${path.join(__dirname, "./index.html")}`
 	);
-
+	win.webContents.setFrameRate(60);
+	win.webContents.frameRate = 60;
 	//En modo desarrollo habilitamos el panel de desarrollo de F12 del explorador
 	if (isDev) win.webContents.openDevTools({ mode: "undocked" });
+	// win.webContents.setBackgroundThrottling(true);
 	// win.webContents.openDevTools({ mode: "undocked" });
 
 	win.webContents.on("did-finish-load", () => {
@@ -91,13 +97,13 @@ app.whenReady().then(() => {
 	try {
 		createLoading();
 		// setTimeout(() => {
-			createMainWindow();
-			// }, 4000);
-			if (isDev) {
-				installExtension([REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS])
-					.then((name) => console.log(`Added Extension:  ${name}`))
-					.catch((err) => console.log("An error occurred: ", err));
-			}
+		createMainWindow();
+		// }, 4000);
+		if (isDev) {
+			installExtension([REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS])
+				.then((name) => console.log(`Added Extension:  ${name}`))
+				.catch((err) => console.log("An error occurred: ", err));
+		}
 	} catch (error) {
 		app.quit();
 		const Alert = require("electron-alert");

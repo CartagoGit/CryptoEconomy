@@ -29,7 +29,7 @@ export const FilterBar = () => {
 			</div>
 			<form
 				className='filter animate__animated animate__faster'
-				style={{ visibility: !isFilterVisible && "collapse" }}
+				style={{ visibility: !isFilterVisible && "hidden" }}
 			>
 				<div>Option 1</div>
 				<div>Option 2</div>
