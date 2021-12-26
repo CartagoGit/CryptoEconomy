@@ -9,14 +9,14 @@ let swalParams = {
 	customClass: "customSwal",
 	buttonsStyling: false,
 	showClass: {
-		// popup: "animate__animated animate__fadeInDown animate__faster",
+		popup: "animate__animated animate__fadeInDown animate__faster",
 		backdrop: "swal2-backdrop-show",
-		icon: "swal2-icon-show"
+		// icon: "swal2-icon-show"
 	},
 	hideClass: {
-		// popup: "animate__animated animate__fadeOutDown animate__faster",
+		popup: "animate__animated animate__fadeOutDown animate__faster",
 		backdrop: "swal2-backdrop-hide",
-		icon: "swal2-icon-hide"
+		// icon: "swal2-icon-hide"
 	},
 	footer: '<div class="swal-wave"></div><div class="swal-wave"></div>',
 	heightAuto: false,

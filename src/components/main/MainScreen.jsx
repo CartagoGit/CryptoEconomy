@@ -4,7 +4,6 @@ import { TestSwals } from "../test/TestSwals";
 export const MainScreen = () => {
 	return (
 		<main className='main-fill'>
-			
 			<div className='main'>
 				<div className='info'>
 					<div className='logoApp'>el logo</div>

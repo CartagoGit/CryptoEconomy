@@ -1,12 +1,12 @@
-button {
+button, .button {
 	cursor: pointer;
 	padding: 5px 12px;
-	border: 2px solid $borderSecondary;
-	color: $letterPrimary;
+	border: $borderPrimary-2;
+	color: $primary;
 	font-size: 1.125em;
 	border-radius: 0.25em;
 	background: $bgSecondary;
-	background-color: $bgSecondary;
+	// background-color: $bgSecondary;
 	transition: box-shadow 0.1s;
 	box-shadow: $bsPrimary 0 0 0 3px transparent;
 	font-weight: bold;
@@ -17,6 +17,6 @@ button {
 	&:hover {
 		color: $letterSecondary;
 		background-color: $bgPrimary;
-		border-color: $borderPrimary;
+		border-color: white;
 	}
 }

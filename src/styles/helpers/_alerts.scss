@@ -18,7 +18,7 @@
 		width: null;
 		max-width: 500px;
 		overflow: hidden;
-		border: 5px solid $borderPrimary;
+		border: $borderSecondary-5;
 		box-shadow: 0px 0px 15px $bsPrimary;
 		&* {
 			z-index: 1;
@@ -83,7 +83,7 @@
 	.swal2-cancel {
 		cursor: pointer;
 		padding: 5px 12px;
-		border: 5px solid $borderSecondary;
+		border: $borderPrimary-2;
 		color: $letterPrimary;
 		font-size: 1.125em;
 		border-radius: 0.25em;
@@ -93,14 +93,14 @@
 		transition: box-shadow 0.1s;
 		box-shadow: $bsPrimary 0 0 0 3px transparent;
 		font-weight: bold;
-		transition: color 500ms ease;
-		transition: background-color 500ms ease;
-		transition: border-color 500ms ease;
+		transition: color 300ms ease;
+		transition: background-color 300ms ease;
+		transition: border 300ms ease;
 
 		&:hover {
 			color: $letterSecondary;
 			background-color: $bgPrimary;
-			border-color: $borderPrimary;
+			border-color: $secondary;
 		}
 	}
 }

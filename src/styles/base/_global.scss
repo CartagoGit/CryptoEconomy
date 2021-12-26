@@ -1,13 +1,15 @@
 html,
 body {
 	margin: 0;
-	padding: 0;
+	padding: 0 !important;
 	height: 100vh;
 	width: 100vw;
 }
 body {
-	overflow-y: scroll;
+	overflow-y: scroll !important;
 	overflow-x: hidden;
+	background: $bgEverything;
+	background-attachment: fixed;
 }
 
 * {
@@ -19,7 +21,7 @@ body {
 }
 
 #root {
-	background-color: $fifth;
+	// background-color: $fifth;
 	overflow-x: hidden;
 }
 

@@ -11,8 +11,10 @@ $eight: #1d1e22;
 
 // main colors
 $bgEverything: linear-gradient(rgba($eight, 1), rgba($tertiary, 1));
-// $bgZero: linear-gradient(rgba($eight, 1), rgba($tertiary, 1));
+$bgEverythingInverse: linear-gradient(rgba($tertiary, 1), rgba($eight, 1));
+
 $bgZero: linear-gradient(rgba($zero, 1), rgba($primary, 1));
+$bgZeroInverse: linear-gradient(rgba($primary, 1), rgba($zero, 1));
 // $bgZero: $zero;
 $borderZero: $sixth solid 1px;
 $textZero: $fifth;
@@ -28,9 +30,16 @@ $bgSecondary: $secondary;
 $bgTertiary: $tertiary;
 
 //Border Colors
-$borderPrimary: $secondary;
-$borderSecondary: $primary;
-$borderTertiary: $tertiary;
+$borderPrimary-1: 1px solid $primary;
+$borderPrimary-2: 2px solid $primary;
+$borderPrimary-3: 3px solid $primary;
+$borderPrimary-5: 5px solid $primary;
+$borderSecondary-1: 1px solid $secondary;
+$borderSecondary-2: 2px solid $secondary;
+$borderSecondary-3: 3px solid $secondary;
+$borderSecondary-5: 5px solid $secondary;
+$borderTertiary-1: 1px solid $tertiary;
+$borderSixth-1: 1px solid $sixth;
 
 // letter color
 $letterPrimary: $tertiary;
