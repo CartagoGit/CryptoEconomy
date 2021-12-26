@@ -1,7 +1,6 @@
 import React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 export const MenuBar = () => {
-	const navigate = useNavigate();
 	return (
 		<header className='menu-fill no-selectable'>
 			<div className='menu'>
@@ -18,7 +17,7 @@ export const MenuBar = () => {
 					Trades
 				</NavLink>
 				<NavLink className='nav-item' to='/historical'>
-					Historico
+					Histórico
 				</NavLink>
 			</div>
 		</header>

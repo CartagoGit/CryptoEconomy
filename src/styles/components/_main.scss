@@ -61,7 +61,7 @@
 				margin-top: 7px;
 				margin-bottom: 7px;
 			}
-			.separator{
+			.separator {
 				width: 100%;
 				border-top: $borderZero;
 				margin-bottom: 10px;
@@ -74,10 +74,10 @@
 				letter-spacing: 0.05em;
 				font-size: 15px;
 				flex-direction: column;
-				div {
-					margin-top: 5px;
-					margin-bottom: 5px;
-				}
+				margin-top: 5px;
+				margin-bottom: 5px;
+				padding-left: 30px;
+				padding-right: 30px;
 			}
 		}
 		.foot {

@@ -18,14 +18,18 @@
 		font-weight: bold;
 		border: $borderSecondary-2;
 		border-top: none;
+		.active {
+			background-color: $bgPrimary;
+		}
 		.nav-item {
 			pointer-events: auto;
 			border-left: $borderSecondary-1;
 			border-right: $borderSecondary-1;
-			
+
 			padding: 30px;
 			// padding-top: 20px;
 			cursor: pointer;
+
 			&:hover {
 				background-color: $bgSecondary;
 				color: $ninth;
