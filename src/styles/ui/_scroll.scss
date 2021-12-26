@@ -1,0 +1,12 @@
+::-webkit-scrollbar {
+	width: 18px;
+	background: $zero;
+	border: 1px $tertiary solid;
+}
+
+::-webkit-scrollbar-thumb {
+	background: $bgEverything;
+	border: $borderZero;
+	border-radius: 7px;
+	z-index: 30;
+}

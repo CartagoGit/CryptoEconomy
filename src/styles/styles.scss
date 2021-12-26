@@ -1,15 +1,21 @@
-
 //Basic
 @import "./base/settings";
 
 //General
 @import "./base/global";
 
-// Components
+//ui
+@import "./ui/buttons";
+@import "./ui/scroll";
+
+// Components ui
+@import "./ui/menu";
+@import "./ui/filter";
+@import "./ui/options";
+
+// Main
 @import "./components/main";
-@import "./components/menu";
-@import "./components/filter";
-@import "./components/options";
+
 
 //Helpers
 @import "./helpers/alerts";

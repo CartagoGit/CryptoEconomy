@@ -5,7 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
 	<React.StrictMode>
-		<CryptoEconomyApp />
+		<CryptoEconomyApp />		
 	</React.StrictMode>,
 	document.getElementById("root")
 );

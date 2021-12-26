@@ -1,14 +1,14 @@
 import React from "react";
-export const FilterBar = () => {
+export const MenuBar = () => {
 	return (
-		<div className='filter-fill'>
-			<div className='filter'>
+		<header className='menu-fill no-selectable'>
+			<div className='menu'>
 				<div>Option 1</div>
 				<div>Option 1</div>
 				<div>Option 1</div>
 				<div>Option 1</div>
 				<div>Option 1</div>
 			</div>
-		</div>
+		</header>
 	);
 };

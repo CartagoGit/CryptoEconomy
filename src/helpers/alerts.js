@@ -20,7 +20,7 @@ let swalParams = {
 	},
 	footer: '<div class="swal-wave"></div><div class="swal-wave"></div>',
 	heightAuto: false,
-	backdrop: false,
+	backdrop: true,
 	allowOutsideClick: false
 };
 

@@ -1,7 +1,23 @@
 // basic colors
+$zero: #191f2d;
 $primary: #002731;
 $secondary: #fff;
 $tertiary: #000;
+$forth: #001f33;
+$fifth: rgb(236, 236, 236);
+$sixth: #4b4b4b;
+$seventh: #34363e;
+$eight: #1d1e22;
+
+// main colors
+$bgEverything: linear-gradient(rgba($eight, 1), rgba($tertiary, 1));
+// $bgZero: linear-gradient(rgba($eight, 1), rgba($tertiary, 1));
+$bgZero: linear-gradient(rgba($zero, 1), rgba($primary, 1));
+// $bgZero: $zero;
+$borderZero: $sixth solid 1px;
+$textZero: $fifth;
+$box-shadowZero: 0px 0px 15px $secondary;
+$border-radiusZero: 5px;
 
 // Basic assets
 $wave: url("../../assets/svgs/wave.svg");
@@ -9,10 +25,12 @@ $wave: url("../../assets/svgs/wave.svg");
 //Bg Colors
 $bgPrimary: $primary;
 $bgSecondary: $secondary;
+$bgTertiary: $tertiary;
 
 //Border Colors
 $borderPrimary: $secondary;
 $borderSecondary: $primary;
+$borderTertiary: $tertiary;
 
 // letter color
 $letterPrimary: $tertiary;
@@ -30,4 +48,7 @@ $success: #a5dc86;
 $error: #f27474;
 
 // box-shadow
-$box-shadow:  0px 0px 15px $bsPrimary;
+$box-shadow: 0px 0px 15px $bsPrimary;
+
+//border-radius
+$border-radius: 20px;

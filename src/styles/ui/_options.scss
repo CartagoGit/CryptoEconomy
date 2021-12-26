@@ -1,22 +1,22 @@
-.menu-fill {
+.options-fill {
 	position: fixed;
-	top: 0px;
+	bottom: 0px;
 	justify-content: center;
 	width: 100vw;
-    z-index: 1;
+    z-index: 10;
 
-	.menu {
-		background-color: red;
-		border-radius: 0px 0px 50px 50px;
+	.options {
+		border-radius: 50px 50px 0px 0px;
 		flex-direction: row;
+		background-color: green;
 		overflow: hidden;
 		box-shadow: $box-shadow;
 
 		div {
 			border-left: 1px solid black;
 			border-right: 1px solid black;
-			padding: 35px;
-			padding-top: 20px;
+			padding: 20px;
+			padding-bottom: 25px;
 			cursor: pointer;
 		}
 	}

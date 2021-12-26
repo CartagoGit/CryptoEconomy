@@ -1,0 +1,35 @@
+.filter-fill {
+	position: fixed;
+	justify-content: center;
+	align-items: end;
+	right: 0px;
+	height: 100vh;
+	z-index: 10;
+	pointer-events: none;
+	flex-direction: column;
+	.btnShow {
+		background-color: yellowgreen;
+		border-radius: 5px;
+		width: 40px;
+		height: 40px;
+		pointer-events: auto;
+		cursor: pointer;
+		box-shadow: $box-shadow;
+	}
+	.filter {
+		background-color: purple;
+		border-radius: 50px 0px 0px 50px;
+		flex-direction: column;
+		overflow: hidden;
+		box-shadow: $box-shadow;
+		pointer-events: auto;
+
+		div {
+			border-top: 1px solid $borderPrimary;
+			border-bottom: 1px solid black;
+			padding: 35px;
+			// padding-top: 20px;
+			cursor: pointer;
+		}
+	}
+}

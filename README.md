@@ -24,6 +24,7 @@ Proyecto para crear una aplicación de escritorio adaptable a web con electron y
 18. `yarn add sass@latest` Para incorporar sass en React
 19. `yarn add uuid@latest` Para crear ids unicos y aleatorios
 20. `yarn add moment@latest` Para trabajar con fechas
+21. `yarn add @fortawesome/fontawesome-svg-core@latest @fortawesome/free-solid-svg-icons@latest @fortawesome/react-fontawesome@latest` Añadir Font-awesome
 
 ### Opcional Para Colgar el trabajo en sitios distribuidos para que puedan usarlo otras personas: `yarn create @electron-forge/cli import`
 

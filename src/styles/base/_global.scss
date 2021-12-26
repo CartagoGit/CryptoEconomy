@@ -4,25 +4,10 @@ body {
 	padding: 0;
 	height: 100vh;
 	width: 100vw;
-	overflow-x: hidden;
-	
-	background: #002731;
 }
-body{
+body {
 	overflow-y: scroll;
-}
-::-webkit-scrollbar {
-	width: 20px;
-	// margin-right: 5px;
-	background-color: $secondary;
-	opacity: 50%;
-}
-
-
-::-webkit-scrollbar-thumb {
-	background: $tertiary;
-	border-radius: 7px;
-	z-index: 3;
+	overflow-x: hidden;
 }
 
 * {
@@ -33,25 +18,15 @@ body{
 	display: flex;
 }
 
-button {
-	cursor: pointer;
-	padding: 5px 12px;
-	border: 2px solid $borderSecondary;
-	color: $letterPrimary;
-	font-size: 1.125em;
-	border-radius: 0.25em;
-	background: $bgSecondary;
-	background-color: $bgSecondary;
-	transition: box-shadow 0.1s;
-	box-shadow: $bsPrimary 0 0 0 3px transparent;
-	font-weight: bold;
-	transition: color 500ms ease;
-	transition: background-color 500ms ease;
-	transition: border-color 300ms ease;
+#root {
+	background-color: $fifth;
+	overflow-x: hidden;
+}
 
-	&:hover {
-		color: $letterSecondary;
-		background-color: $bgPrimary;
-		border-color: $borderPrimary;
-	}
+.no-selectable {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }

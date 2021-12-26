@@ -19,3 +19,7 @@
 		// 	"unicode": false,
 		// 	"artifactName": "${productName}Portable${version}.${ext}"
 // },
+
+
+//Olas alto consumo CPU
+
