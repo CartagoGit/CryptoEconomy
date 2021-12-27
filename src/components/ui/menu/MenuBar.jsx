@@ -5,19 +5,19 @@ export const MenuBar = () => {
 		<header className='menu-fill no-selectable'>
 			<div className='menu'>
 				<NavLink className='nav-item' to='/cryptocurrency'>
-					CryptoMonedas
+					Cryptocurrency
 				</NavLink>
 				<NavLink className='nav-item' to='/tokens'>
 					Tokens
 				</NavLink>
-				<NavLink className='nav-item' to='/portafolio'>
-					Portafolio
+				<NavLink className='nav-item' to='/portfolio'>
+					Portfolio
 				</NavLink>
 				<NavLink className='nav-item' to='/trades'>
 					Trades
 				</NavLink>
 				<NavLink className='nav-item' to='/historical'>
-					Histórico
+					Historical
 				</NavLink>
 			</div>
 		</header>

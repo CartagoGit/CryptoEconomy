@@ -11,7 +11,7 @@ export const AppRouter = () => {
 		<Routes>
 			<Route path='/cryptocurrency' element={<ListCryptos />} />
 			<Route path='/tokens' element={<TokensScreen />} />
-			<Route path='/portafolio' element={<PortafolioScreen />} />
+			<Route path='/portfolio' element={<PortafolioScreen />} />
 			<Route path='/trades' element={<TradesScreen />} />
 			<Route path='/historical' element={<HistoricalScreen />} />
 
