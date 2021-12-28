@@ -21,9 +21,10 @@
 19. ~~Comprobar que el elemento en el navegador es el activo~~
 20. Guardar la localizacion de la ultima ruta para el inicio de sesion requiere la base de datos TODO
 21. Transiciones entre ventanas del main TODO
-22. Cargar/fetch la api con el mercado de cryptomonedas y sus precios TODO
-23. Listar las cryptomonedas TODO
-24. Cargar la api con los tokens empezando por la BSC TODO
-25. Listar los tokens TODO
-26. Compras y ventas de cryptomonedas segun su fecha guardando la fecha y su precio en usd/eur en el momento de la compra o venta, y a cada momento. TODO
-27. Guardar las compras y ventas de tokens segun su fecha, precio y correlacion con la moneda predominante de la red, usd y eur TODO
+22. Crear librerias con sus endpoints de cada clase TODO
+23. Cargar/fetch la api con el mercado de cryptomonedas y sus precios TODO
+24. Listar las cryptomonedas TODO
+25. Cargar la api con los tokens empezando por la BSC TODO
+26. Listar los tokens TODO
+27. Compras y ventas de cryptomonedas segun su fecha guardando la fecha y su precio en usd/eur en el momento de la compra o venta, y a cada momento. TODO
+28. Guardar las compras y ventas de tokens segun su fecha, precio y correlacion con la moneda predominante de la red, usd y eur TODO
