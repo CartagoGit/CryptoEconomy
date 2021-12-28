@@ -1,6 +1,6 @@
-const request  = require("../../../globalHelpers/request");
-const ApiUrls = require("../helpers/ApiUrls");
-const deleteParameter = require("../../../globalHelpers/deleteParameter");
+const request  = require("../../../libHelpers/request");
+const ApiUrls = require("../routes/ApiUrls");
+const deleteParameter = require("../../../libHelpers/deleteParameter");
 
 const url = new ApiUrls();
 

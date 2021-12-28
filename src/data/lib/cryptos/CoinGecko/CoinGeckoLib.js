@@ -1,5 +1,5 @@
 const _ping = require("./Endpoints/ping");
-const Constants = require("./helpers/constants");
+const Constants = require("./routes/constants");
 const _simple = require("./Endpoints/simple");
 const _coins = require("./Endpoints/coins");
 const _contract = require("./Endpoints/contract");

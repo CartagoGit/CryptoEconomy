@@ -8,7 +8,7 @@
  */
 
 const Utilities = require("./utilities.js");
-const Constants = require("../cryptos/CoinGecko/helpers/constants.js");
+const Constants = require("../cryptos/CoinGecko/routes/constants.js");
 
 const BuildRequestOptions = (path, params) => {
 	//Stringify object params if exist
