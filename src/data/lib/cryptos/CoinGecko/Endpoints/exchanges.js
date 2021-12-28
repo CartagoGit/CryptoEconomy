@@ -1,6 +1,6 @@
-const request = require("../helpers/request");
+const request  = require("../../../globalHelpers/request");
 const ApiUrls = require("../helpers/ApiUrls");
-const parameterChecker = require("../helpers/parameterChecker");
+const parameterChecker = require("../../../globalHelpers/parameterChecker");
 const url = new ApiUrls();
 
 const exchanges = (params) => request(url.exchanges.Exchanges,params);

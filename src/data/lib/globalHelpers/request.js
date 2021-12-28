@@ -5,15 +5,18 @@ const request = async (path, params) => {
 	let options = buildRequestOptions(path, params);
 	return new Promise((resolve, reject) => {
 		try {
-			const url = `https://${options.host}${options.path}`;
+			const url = `${options.uri}`;
 			fetch(url).then(async (res) => {
 				const body = await res.json();
 				resolve(
 					returnObject(
 						!(res.status < 200 || res.status >= 300),
-						res.statusText,
+						res.statusText === "" && res.status === 200
+							? "Fetched correctly"
+							: res.statusText,
 						res.status,
-						body
+						body,
+						options
 					)
 				);
 			});

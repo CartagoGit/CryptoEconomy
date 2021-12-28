@@ -1,4 +1,4 @@
-const request = require("../helpers/request");
+const request  = require("../../../globalHelpers/request");
 const ApiUrls = require("../helpers/ApiUrls");
 const url = new ApiUrls();
 

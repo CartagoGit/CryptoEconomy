@@ -19,7 +19,7 @@ const _companies = require("./Endpoints/companies");
 
 //Helpers
 
-class CoinGecko {
+class CoinGeckoLib {
     ping() {
         return _ping.pingRequest();
     }
@@ -258,14 +258,14 @@ class CoinGecko {
 }
 
 //Set Constants
-CoinGecko.API_VERSION = Constants.API_VERSION;
-CoinGecko.REQUESTS_PER_SECOND = Constants.REQUESTS_PER_SECOND;
-CoinGecko.ORDER = Constants.ORDER;
-CoinGecko.STATUS_UPDATE_CATEGORY = Constants.STATUS_UPDATE_CATEGORY;
-CoinGecko.STATUS_UPDATE_PROJECT_TYPE = Constants.STATUS_UPDATE_PROJECT_TYPE;
-CoinGecko.EVENT_TYPE = Constants.EVENT_TYPE;
-CoinGecko.TIMEOUT = Constants.TIMEOUT;
+CoinGeckoLib.API_VERSION = Constants.API_VERSION;
+CoinGeckoLib.REQUESTS_PER_SECOND = Constants.REQUESTS_PER_SECOND;
+CoinGeckoLib.ORDER = Constants.ORDER;
+CoinGeckoLib.STATUS_UPDATE_CATEGORY = Constants.STATUS_UPDATE_CATEGORY;
+CoinGeckoLib.STATUS_UPDATE_PROJECT_TYPE = Constants.STATUS_UPDATE_PROJECT_TYPE;
+CoinGeckoLib.EVENT_TYPE = Constants.EVENT_TYPE;
+CoinGeckoLib.TIMEOUT = Constants.TIMEOUT;
 
 //
 
-module.exports = exports = CoinGecko;
+module.exports = exports = CoinGeckoLib;

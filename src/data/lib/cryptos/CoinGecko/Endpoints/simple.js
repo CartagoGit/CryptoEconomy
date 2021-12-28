@@ -1,7 +1,7 @@
-const ApiUrls = require("../helpers/ApiUrls.js");
-const request = require("../helpers/request.js");
-const Utils = require("../helpers/utilities.js");
-const parameterChecker = require("../helpers/parameterChecker");
+const request  = require("../../../globalHelpers/request");
+const ApiUrls = require("../helpers/ApiUrls");
+const Utils = require("../../../globalHelpers/utilities");
+const parameterChecker = require("../../../globalHelpers/parameterChecker");
 
 const url = new ApiUrls();
 
