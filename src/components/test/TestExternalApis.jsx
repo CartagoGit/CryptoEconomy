@@ -1,5 +1,6 @@
 import React from "react";
-import { getAllDataByMarket } from '../../data/getDataByMarket.js';
+import { getAllDataByMarket } from '../../data/RESTs/getDataByMarket.js';
+
 
 export const TestExternalApis = () => {
 	const handleClickAllData = async () => {
