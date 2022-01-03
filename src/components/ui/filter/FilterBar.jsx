@@ -13,7 +13,7 @@ export const FilterBar = () => {
 		filterPanel.addEventListener(
 			"animationend",
 			(handler = (e) => {
-				console.log("animacion terminada:" + e.stopImmediatePropagation);
+				// console.log("animacion terminada:" + e.stopImmediatePropagation);
 				filterPanel.classList.remove("animate__slideInRight");
 				filterPanel.classList.remove("animate__slideOutRight");
 				setFilterVisible(!isFilterVisible);
