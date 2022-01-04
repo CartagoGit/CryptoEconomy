@@ -1,11 +1,16 @@
 # Library to look for data in online APIs to show prices, market cap, and other queries
 
+## Merge GraphQl Dats with Rest Data
+
+getMergeData.js
+
 ## Get Data From ->
 
 ### GraphQl
 
 from Global GraphQl BitQuery - NOT API REST
 [https://graphql.bitquery.io/]
+Urls definided in constants.js in GraphQl folder used by ApolloClient for React
 
 ### REST
 

@@ -1,9 +1,7 @@
 import React from "react";
+import { getMergeMarketData } from "../../data/getMergeData.js";
 import {
 	getGraphQLBitQuery,
-	testGetRequest,
-	main,
-	joderConEstaMierda
 } from "../../data/GraphQL/fetchGraphQL.js";
 import { getAllDataByMarket } from "../../data/RESTs/getDataByMarket.js";
 
@@ -15,15 +13,14 @@ export const TestExternalApis = () => {
 		console.log(await getGraphQLBitQuery());
 	};
 	const handleClickRequest = async () => {
-		// console.log(await joderConEstaMierda());
-		// console.log(await main());
+		console.log(await getMergeMarketData()); 
 	};
 	return (
 		<>
 			<button onClick={handleClickAllData}>Todos los datos</button>
 			<button onClick={handleClickGraphQL}>Fetch con GraphQl</button>
 			<button onClick={handleClickRequest}>
-				Fetch con GraphQl con request
+				Fetch con Merge
 			</button>
 		</>
 	);

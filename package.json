@@ -27,18 +27,18 @@
 		"react-scripts": "^5.0.0",
 		"redux": "^4.1.2",
 		"redux-thunk": "^2.4.1",
-		"sass": "^1.45.1",
-		"sweetalert2": "^11.3.0",
+		"sass": "1.45.2",
+		"sweetalert2": "11.3.3",
 		"thunk": "^0.0.1",
 		"uuid": "^8.3.2",
 		"web-vitals": "^2.1.2"
 	},
 	"devDependencies": {
-		"@types/node": "^17.0.2",
+		"@types/node": "17.0.7",
 		"concurrently": "^6.5.1",
 		"cross-env": "^7.0.3",
 		"electron": "^16.0.5",
-		"electron-builder": "^22.14.5",
+		"electron-builder": "22.14.12",
 		"electronmon": "^2.0.2",
 		"wait-on": "^6.0.0"
 	},

@@ -1,6 +1,8 @@
-const initialState = { pageSelected : null,  };
+import { types } from "../types/types";
 
-export const globalReducer = (state = initialState, action) => {
+const initialState = { page_selected : null,  };
+
+export const global = (state = initialState, action) => {
 	switch (action.type) {
 		default:
 			return state;

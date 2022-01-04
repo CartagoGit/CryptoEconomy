@@ -1,4 +1,6 @@
 import { combineReducers } from "redux";
-import { mainReducer } from "./main";
+import { main } from "./main";
+import { global } from "./global";
+import {data} from './data';
 
-export const rootReducer = combineReducers({ mainReducer });
+export const rootReducer = combineReducers({ main, global, data });

@@ -72,7 +72,7 @@ export const getBscDataByMarket = async () => {
 // ----------------------------Cryptos 
 //----- get from CoinGecko 
 export const getCoingeckoDataByMarket = () =>
-	getAllFromCoingeckoByMarket().then((result) => result);
+	getAllFromCoingeckoByMarket({}).then((result) => result);
 
 // ----------------------------BSC
 //----- get from Pancake 

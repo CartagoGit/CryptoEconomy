@@ -4,6 +4,7 @@ const returnObject = require("./returnObject.js");
 
 const request = async (path, params, Constants) => {
 	let options = buildRequestOptions(path, params, Constants);
+	// return options;
 	return new Promise((resolve, reject) => {
 		try {
 			const url = `${options.uri}`;
