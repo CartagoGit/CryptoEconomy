@@ -1,10 +1,10 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import { ListCryptos } from "../components/main/contain/cryptocurrency/ListCryptos";
-import { LoadingScreen } from "../components/ui/LoadingScreen";
-import { PortafolioScreen } from './../components/main/contain/portafolio/PortafolioScreen';
-import { TokensScreen } from './../components/main/contain/tokens/TokensScreen';
-import { TradesScreen } from './../components/main/contain/trades/TradesScreen';
-import { HistoricalScreen } from './../components/main/contain/historical/HistoricalScreen';
+import { ListCryptos } from "../main/contain/cryptocurrency/ListCryptos";
+import { LoadingScreen } from "../ui/LoadingScreen";
+import { PortafolioScreen } from '../main/contain/portafolio/PortafolioScreen';
+import { TokensScreen } from '../main/contain/tokens/TokensScreen';
+import { TradesScreen } from '../main/contain/trades/TradesScreen';
+import { HistoricalScreen } from '../main/contain/historical/HistoricalScreen';
 
 export const AppRouter = () => {
 	return (

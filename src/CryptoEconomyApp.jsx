@@ -9,22 +9,22 @@ import { FilterBar } from "./components/ui/filter/FilterBar";
 import { MenuBar } from "./components/ui/menu/MenuBar";
 import { OptionsBar } from "./components/ui/options/OptionsBar";
 
-import { store } from "./store/store";
+import { store } from "./redux/store/store.js";
 import "./styles/styles.scss";
 
 export const CryptoEconomyApp = () => {
 	return (
 		<>
-			<ApolloProvider client={client}>
-				<Provider store={store}>
+			<Provider store={store}>
+				<ApolloProvider client={client}>
 					<BrowserRouter>
 						<MenuBar />
 						<FilterBar />
 						<OptionsBar />
 						<MainScreen />
 					</BrowserRouter>
-				</Provider>
-			</ApolloProvider>
+				</ApolloProvider>
+			</Provider>
 		</>
 	);
 };

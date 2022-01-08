@@ -25,12 +25,13 @@
 23. ~~Cargar/fetch la api con el mercado de cryptomonedas y sus precios desde REST~~
 24. ~~Cargar la api REST con los tokens empezando empezando desde CoinGecko~~
 25. ~~Cargar la api REST con los tokens empezando por la BSC - Desde Pancake~~
-26. Crear estados de Redux con loading, error y data cuando se realice una consulta a una base de datos TODO
-27. Mostrar la pantalla de Loading mientras loading este entre true TODO
-28. Crear queries para sacar el precio de un token de Bitquery
-29. crear queries para sacar los tokens pertenecientes a una wallet
-30. Listar los tokens del usuario desde GraphQL TODO
-31. Compras/ventas de cryptos de la billetera desde Bitquery. TODO
-32. Guardar las compras y ventas de tokens segun su fecha, precio y correlacion con la moneda predominante de la red, usd y eur TODO
-33. Crear un Provider de Apollo que guarde los datos de los REST y haga un Merge con los datos sacados de GrpahQL de Bitquery TODO
-34. Añadir conversor entre diferentes monedas FIAT - Usd, Eur, Yen, etc etc TODO
+26. ~~Crear lista con columnas con los precios de las cryptos y que cada fila sea seleccionable~~
+27. Crear estados de Redux con loading, error y data cuando se realice una consulta a una base de datos TODO
+28. Mostrar la pantalla de Loading mientras loading este entre true TODO
+29. Crear queries para sacar el precio de un token de Bitquery
+30. crear queries para sacar los tokens pertenecientes a una wallet
+31. Listar los tokens del usuario desde GraphQL TODO
+32. Compras/ventas de cryptos de la billetera desde Bitquery. TODO
+33. Guardar las compras y ventas de tokens segun su fecha, precio y correlacion con la moneda predominante de la red, usd y eur TODO
+34. Crear un Provider de Apollo que guarde los datos de los REST y haga un Merge con los datos sacados de GrpahQL de Bitquery TODO
+35. Añadir conversor entre diferentes monedas FIAT - Usd, Eur, Yen, etc etc TODO

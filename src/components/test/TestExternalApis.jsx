@@ -1,5 +1,5 @@
 import React from "react";
-import { getMergeMarketData } from "../../data/getMergeData.js";
+import { getPlataformsMergeMarketData } from "../../data/getMergeData.js";
 import {
 	getGraphQLBitQuery,
 } from "../../data/GraphQL/fetchGraphQL.js";
@@ -13,7 +13,7 @@ export const TestExternalApis = () => {
 		console.log(await getGraphQLBitQuery());
 	};
 	const handleClickRequest = async () => {
-		console.log(await getMergeMarketData()); 
+		console.log(await getPlataformsMergeMarketData()); 
 	};
 	return (
 		<>

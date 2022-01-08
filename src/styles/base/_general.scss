@@ -1,0 +1,32 @@
+.list {
+	width: 100%;
+	height: 100%;
+	flex-direction: column;
+	.row {
+		margin-bottom: 2px;
+		width: 100%;
+		align-items: center;
+		border: $borderNinth-1;
+		border-radius: $border-radiusZero;
+		padding: 10px;
+		div {
+			width: 100%;
+			flex-basis: 35px;
+			justify-content: end;
+			
+		}
+		img {
+			margin-right: 5px;
+			margin-left: 5px;
+			filter: drop-shadow(0 0 0.03rem white);
+		}
+		.col {
+			height: 100%;
+			flex: 1 1 0;
+		}
+
+		.align-left{
+			justify-content: start;
+		}
+	}
+}

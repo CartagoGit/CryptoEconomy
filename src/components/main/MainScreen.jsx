@@ -1,5 +1,5 @@
 import React from "react";
-import { AppRouter } from "../../routers/AppRouter";
+import { AppRouter } from "../routers/AppRouter";
 import { Social } from "./Social";
 export const MainScreen = () => {
 	return (

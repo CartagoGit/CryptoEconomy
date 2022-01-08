@@ -1,6 +1,6 @@
 import { types } from "../types/types";
 
-const initialState = { active_selection: null };
+const initialState = { active_element: null };
 
 export const main = (state = initialState, action) => {
 	switch (action.type) {

@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
-import { rootReducer } from "../reducers/root";
+import { rootReducer } from "../root";
 
 const composeEnhancers =
 	(process.env.NODE_ENV !== "production" &&
