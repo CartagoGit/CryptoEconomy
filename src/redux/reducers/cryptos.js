@@ -1,4 +1,4 @@
-import { types } from "../types/types";
+// import { types } from "../types/types";
 
 const plataform = { data: null, plataform_name: null, last_fetch: null };
 

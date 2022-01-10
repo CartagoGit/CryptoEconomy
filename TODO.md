@@ -35,3 +35,4 @@
 33. Guardar las compras y ventas de tokens segun su fecha, precio y correlacion con la moneda predominante de la red, usd y eur TODO
 34. Crear un Provider de Apollo que guarde los datos de los REST y haga un Merge con los datos sacados de GrpahQL de Bitquery TODO
 35. Añadir conversor entre diferentes monedas FIAT - Usd, Eur, Yen, etc etc TODO
+36. Importar/Exportar Portafolios TODO

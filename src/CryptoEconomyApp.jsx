@@ -12,7 +12,10 @@ import { OptionsBar } from "./components/ui/options/OptionsBar";
 import { store } from "./redux/store/store.js";
 import "./styles/styles.scss";
 
+// import { pruebaLow } from "./lowdb/low";
+
 export const CryptoEconomyApp = () => {
+	// pruebaLow();
 	return (
 		<>
 			<Provider store={store}>

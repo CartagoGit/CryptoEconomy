@@ -21,7 +21,7 @@ const blacklist = {
 };
 const initialState = {
 	wallets: [wallet],
-	amount_usd: null,
+	// amount_usd: null,
 	blacklist: [blacklist]
 };
 

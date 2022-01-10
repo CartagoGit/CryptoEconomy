@@ -4,28 +4,23 @@ import { getPlataformsMergeMarketData } from "../../../../data/getMergeData";
 import { RowCrypto } from "./RowCrypto";
 
 export const ListCryptos = () => {
-	// const cryptosData = useMemo(async () => {
-	// 	return await getPlataformsMergeMarketData();
-	// }, []);
-
 	const [cryptosData, setCryptosData] = useState([]);
 
-	// cryptosData = useMemo(() => {
-	// 	getPlataformsMergeMarketData().then((result)=> result);
-	// }, []);
-	useEffect(async () => {
+	useEffect(() => {
 		if (cryptosData.length === 0) {
-			setCryptosData(await getPlataformsMergeMarketData());
-			console.log(cryptosData);
+			const fetchData = async () => {
+				setCryptosData(await getPlataformsMergeMarketData());
+			};
+			fetchData();
+			// console.log(cryptosData);
 		}
-	}, [setCryptosData]);
+	}, [setCryptosData, cryptosData]);
 
 	return (
 		<>
-			
 			<div className='list'>
 				{cryptosData.map((cryptoData) => {
-					console.log(cryptoData);
+					{/* console.log(cryptoData); */}
 
 					return <RowCrypto key={cryptoData.id} {...cryptoData} />;
 				})}
