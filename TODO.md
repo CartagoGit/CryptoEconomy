@@ -15,24 +15,27 @@
 13. ~~Toggle para ocultar menu de filtros~~
 14. ~~Concretar que apis de precios de cryptomonedas usar~~ REVIEW Elegimos CoinGecko para comenzar + ampliable en un futuro
 15. ~~Concretar apis de red bsc usar~~ REVIEW Elegimos Pancake para comenzar + ampliable en un futuro
-16. Crear base de datos basica para guardar datos del usuario TODO
-17. ~~Hacer que los enlaces de twitter, github, etc aparezcan en el main.~~ ANCHOR En principio no se puede realizar por iframes ni incrustrando
-18. ~~Crear enlaces a paginas principales del menu~~
-19. ~~Comprobar que el elemento en el navegador es el activo~~
-20. Guardar la localizacion de la ultima ruta para el inicio de sesion requiere la base de datos TODO
-21. Transiciones entre ventanas del main TODO
-22. ~~Crear librerias con sus endpoints de cada clase REST~~ REVIEW Actualizar cuando se requieran mas RESTs
-23. ~~Cargar/fetch la api con el mercado de cryptomonedas y sus precios desde REST~~
-24. ~~Cargar la api REST con los tokens empezando empezando desde CoinGecko~~
-25. ~~Cargar la api REST con los tokens empezando por la BSC - Desde Pancake~~
-26. ~~Crear lista con columnas con los precios de las cryptos y que cada fila sea seleccionable~~
-27. Crear estados de Redux con loading, error y data cuando se realice una consulta a una base de datos TODO
-28. Mostrar la pantalla de Loading mientras loading este entre true TODO
-29. Crear queries para sacar el precio de un token de Bitquery
-30. crear queries para sacar los tokens pertenecientes a una wallet
-31. Listar los tokens del usuario desde GraphQL TODO
-32. Compras/ventas de cryptos de la billetera desde Bitquery. TODO
-33. Guardar las compras y ventas de tokens segun su fecha, precio y correlacion con la moneda predominante de la red, usd y eur TODO
-34. Crear un Provider de Apollo que guarde los datos de los REST y haga un Merge con los datos sacados de GrpahQL de Bitquery TODO
-35. Añadir conversor entre diferentes monedas FIAT - Usd, Eur, Yen, etc etc TODO
-36. Importar/Exportar Portafolios TODO
+16. ~~Crear base de datos basica para guardar datos del usuario~~
+17. Crear rutas para la base de datos TODO
+18. Crear schemas para cada json de la base de datos TODO
+19. Crear un json especifico para cada seccion TODO
+20. ~~Hacer que los enlaces de twitter, github, etc aparezcan en el main.~~ ANCHOR En principio no se puede realizar por iframes ni incrustrando
+21. ~~Crear enlaces a paginas principales del menu~~
+22. ~~Comprobar que el elemento en el navegador es el activo~~
+23. Guardar la localizacion de la ultima ruta para el inicio de sesion requiere la base de datos TODO
+24. Transiciones entre ventanas del main TODO
+25. ~~Crear librerias con sus endpoints de cada clase REST~~ REVIEW Actualizar cuando se requieran mas RESTs
+26. ~~Cargar/fetch la api con el mercado de cryptomonedas y sus precios desde REST~~
+27. ~~Cargar la api REST con los tokens empezando empezando desde CoinGecko~~
+28. ~~Cargar la api REST con los tokens empezando por la BSC - Desde Pancake~~
+29. ~~Crear lista con columnas con los precios de las cryptos y que cada fila sea seleccionable~~
+30. Crear estados de Redux con loading, error y data cuando se realice una consulta a una base de datos TODO
+31. Mostrar la pantalla de Loading mientras loading este entre true TODO
+32. Crear queries para sacar el precio de un token de Bitquery
+33. crear queries para sacar los tokens pertenecientes a una wallet
+34. Listar los tokens del usuario desde GraphQL TODO
+35. Compras/ventas de cryptos de la billetera desde Bitquery. TODO
+36. Guardar las compras y ventas de tokens segun su fecha, precio y correlacion con la moneda predominante de la red, usd y eur TODO
+37. Crear un Provider de Apollo que guarde los datos de los REST y haga un Merge con los datos sacados de GrpahQL de Bitquery TODO
+38. Añadir conversor entre diferentes monedas FIAT - Usd, Eur, Yen, etc etc TODO
+39. Importar/Exportar Portafolios TODO

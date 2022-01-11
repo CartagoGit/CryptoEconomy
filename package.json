@@ -53,7 +53,7 @@
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
 
-		"server-lowdb": "nodemon  src/server/server.mjs --ignore src/server/data/",
+		"server-lowdb": "nodemon  src/server/server.mjs",
 		"dev": "concurrently -k \"cross-env BROWSER=none yarn start\" \"yarn:electron\"",
 		"electron": "wait-on tcp:3000 && electron .",
 		"electron:package:mac": "yarn build && electron-builder -m -c.extraMetadata.main=build/electron.js",
