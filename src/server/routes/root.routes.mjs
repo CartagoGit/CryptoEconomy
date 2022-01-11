@@ -6,10 +6,11 @@ import { setSessionRoutes } from "./session.routes.mjs";
 import { setTokensRoutes } from "./tokens.routes.mjs";
 export const router = Router();
 
-router.use((req, res, next) => {
-	console.log("Time: ", Date());
-	next();
-});
+// TO SHOW DATE IN LOG
+// router.use((req, res, next) => {
+// 	console.log("Time: ", Date());
+// 	next();
+// });
 
 router.get("/", (req, res) => {
 	res.send("Welcome into CryptoEconomy lowDB API");
@@ -21,6 +22,4 @@ setFavoritesRoutes();
 setPortfolioRoutes();
 setSessionRoutes();
 
-router.get("/*", (req, res) => {
-	res.redirect(req.baseUrl);
-});
+router.get("/*", (req, res) => res.redirect(req.baseUrl));

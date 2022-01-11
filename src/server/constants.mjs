@@ -7,6 +7,7 @@ const ROUTE_SESSION = "/session";
 const ROUTE_WALLETS = "/wallets";
 const ROUTE_FAVORITES = "/favorites";
 const LOGS_FOLDER = "./logs";
+const LOGS_ERROR_FOLDER = "./logs/errors";
 
 export {
 	PORT,
@@ -16,5 +17,7 @@ export {
 	ROUTE_PORTFOLIOS,
 	ROUTE_SESSION,
 	ROUTE_WALLETS,
-	ROUTE_FAVORITES
+	ROUTE_FAVORITES,
+	LOGS_FOLDER,
+	LOGS_ERROR_FOLDER
 };

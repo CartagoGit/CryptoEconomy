@@ -52,7 +52,6 @@
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
-
 		"server-lowdb": "nodemon  src/server/server.mjs",
 		"dev": "concurrently -k \"cross-env BROWSER=none yarn start\" \"yarn:electron\"",
 		"electron": "wait-on tcp:3000 && electron .",
@@ -95,7 +94,7 @@
 				]
 			},
 			{
-				"from":"server/",
+				"from": "server/",
 				"to": "server/",
 				"filter": [
 					"**/*"
