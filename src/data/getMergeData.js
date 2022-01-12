@@ -1,6 +1,6 @@
 import { getAllFromCoingeckoByMarket } from "./RESTs/calls/cryptos/coinGeckoData";
 
-//TODO hacer un merge de los datos de varias APIs, para empezar usaremos solo la api de CoinGecko
+//REVIEW hacer un merge de los datos de varias APIs, para empezar usaremos solo la api de CoinGecko
 export const getPlataformsMergeMarketData = () =>
 	getAllFromCoingeckoByMarket({
 		per_page: 200,

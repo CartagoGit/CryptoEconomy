@@ -1,4 +1,6 @@
-# Library to look for data in online APIs to show prices, market cap, and other queries
+# Get Data From External APIs
+
+## Library to look for data in online APIs to show prices, market cap, and other queries
 
 ## Merge GraphQl Dats with Rest Data
 

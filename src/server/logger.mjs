@@ -1,4 +1,4 @@
- // REVIEW Completly To do some logger in the future
+// REVIEW Completly To do some logger in the future
 
 import morgan from "morgan";
 // import moment from "moment";
@@ -6,10 +6,11 @@ import morgan from "morgan";
 // import path, { dirname } from "path";
 // import { fileURLToPath } from "url";
 
-import { app } from "./app.mjs";
+import { getApp } from "./app.mjs";
+let app;
 // import { LOGS_FOLDER, LOGS_ERROR_FOLDER } from "./constants.mjs";
 
-// const errorLogFormat =
+// const logFormat =
 // 	":requestId :status :res[content-length] :response-time ms";
 // const __dirname = dirname(fileURLToPath(import.meta.url));
 // const file = `${moment().format("YYYY_MM_D")}.log`;
@@ -17,10 +18,10 @@ import { app } from "./app.mjs";
 
 //Set messages from morgan in console log and log files
 export const setLogs = () => {
+	app = getApp();
 	// Console Log from morgan
 	app.use(morgan("dev"));
 
-   
 	// // Ok File Logs
 	// app.use(
 	// 	morgan("common", {

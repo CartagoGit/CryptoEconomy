@@ -25,7 +25,7 @@ Proyecto para crear una aplicación de escritorio adaptable a web con electron y
 19. `yarn add uuid@latest` Para crear ids unicos y aleatorios
 20. `yarn add moment@latest` Para trabajar con fechas
 21. `yarn add @apollo/client@latest graphql@latest` Para hacer requests de GraphQL
-22. `yarn add lowdb@latest` Lowdb como pequeña base de datos para la aplicacion y guardar las configuraciones del usuario
+22. `yarn add lowdb@latest @types/lowdb@latest` Lowdb como pequeña base de datos para la aplicacion y guardar las configuraciones del usuario
 23. `yarn add express@latest morgan@latest nodemon@latest` crear las dependencias necesariar para usar con lowDB como servidor
 24. `yarn add json-server@latest` Para crear una rest basica para el lowDb
 

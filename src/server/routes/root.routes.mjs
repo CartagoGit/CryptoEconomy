@@ -1,4 +1,5 @@
 import Router from "express";
+import { createNewDB } from "../database.mjs";
 import { setCryposRoutes } from "./cryptos.routes.mjs";
 import { setFavoritesRoutes } from "./favorites.routes.mjs";
 import { setPortfolioRoutes } from "./portfolios.routes.mjs";
@@ -21,5 +22,14 @@ setTokensRoutes();
 setFavoritesRoutes();
 setPortfolioRoutes();
 setSessionRoutes();
+
+router.get("/reset_db", (req, res) => {
+	if (req.body.reset_db === true) {
+		createNewDB();
+		res.status(200).send("DB reseted");
+	} else {
+		res.status(412).send("DB isn't reseted");
+	}
+});
 
 router.get("/*", (req, res) => res.redirect(req.baseUrl));
