@@ -4,6 +4,7 @@ import { Low, JSONFileSync } from "lowdb";
 import path, { dirname } from "path";
 import { fileURLToPath } from "url";
 import fs from "fs";
+import { TYPES } from "./constants.mjs";
 import { getSchema } from "./schemas/root.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -14,14 +15,11 @@ const createAdapter = (fileName = null) => {
 	return new JSONFileSync(path.join(__dirname, folder, file));
 };
 //Every param is a json with adapter to access and take or write data
-const db = {
-	session: new Low(createAdapter()),
-	cryptos: new Low(createAdapter()),
-	tokens: new Low(createAdapter()),
-	wallets: new Low(createAdapter()),
-	portfolios: new Low(createAdapter()),
-	favorites: new Low(createAdapter())
-};
+const db = {};
+//Asign a new DB for every type of data
+Object.keys(TYPES).map((key) => {
+	db[key] = new Low(createAdapter());
+});
 
 export const createConnection = async () => {
 	await Promise.all(

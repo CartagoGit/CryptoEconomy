@@ -1,12 +1,13 @@
 import { router } from "./root.routes.mjs";
-import { ROUTE_CRYPTOS } from "../constants.mjs";
+import { TYPES } from "../constants.mjs";
+const route = TYPES.cryptos.route;
 
 export const setCryposRoutes = () => {
-	router.get(ROUTE_CRYPTOS, (req, res) => {
+	router.get(route, (req, res) => {
 		res.send("Api de cryptos");
 	});
 
-	router.get(ROUTE_CRYPTOS + "*", (req, res) => {
-		res.redirect(`${req.baseUrl}${ROUTE_CRYPTOS}`);
+	router.get(route + "*", (req, res) => {
+		res.redirect(`${req.baseUrl}${route}`);
 	});
 };

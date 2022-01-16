@@ -1,12 +1,13 @@
 import { router } from "./root.routes.mjs";
-import { ROUTE_PORTFOLIOS } from "../constants.mjs";
+import { TYPES } from "../constants.mjs";
+const route = TYPES.portfolios.route;
 
 export const setPortfolioRoutes = () => {
-	router.get(ROUTE_PORTFOLIOS, (req, res) => {
+	router.get(route, (req, res) => {
 		res.send("Api de portafolios");
 	});
 
-	router.get(ROUTE_PORTFOLIOS + "*", (req, res) => {
-		res.redirect(`${req.baseUrl}${ROUTE_PORTFOLIOS}`);
+	router.get(route + "*", (req, res) => {
+		res.redirect(`${req.baseUrl}${route}`);
 	});
 };

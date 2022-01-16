@@ -1,12 +1,13 @@
 import { router } from "./root.routes.mjs";
-import { ROUTE_FAVORITES } from "../constants.mjs";
+import { TYPES } from "../constants.mjs";
+const route = TYPES.favorites.route;
 
 export const setFavoritesRoutes = () => {
-	router.get(ROUTE_FAVORITES, (req, res) => {
+	router.get(route, (req, res) => {
 		res.send("Api de Favoritos");
 	});
 
-	router.get(ROUTE_FAVORITES + "*", (req, res) => {
-		res.redirect(`${req.baseUrl}${ROUTE_FAVORITES}`);
+	router.get(route + "*", (req, res) => {
+		res.redirect(`${req.baseUrl}${route}`);
 	});
 };

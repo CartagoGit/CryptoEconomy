@@ -5,6 +5,7 @@ import { setFavoritesRoutes } from "./favorites.routes.mjs";
 import { setPortfolioRoutes } from "./portfolios.routes.mjs";
 import { setSessionRoutes } from "./session.routes.mjs";
 import { setTokensRoutes } from "./tokens.routes.mjs";
+import { setWalletsRoutes } from "./wallets.routes.mjs";
 export const router = Router();
 
 // TO SHOW DATE IN LOG
@@ -22,6 +23,7 @@ setTokensRoutes();
 setFavoritesRoutes();
 setPortfolioRoutes();
 setSessionRoutes();
+setWalletsRoutes();
 
 router.get("/reset_db", (req, res) => {
 	if (req.body.reset_db === true) {
