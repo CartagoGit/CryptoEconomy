@@ -1,10 +1,11 @@
-const request = require("../../../libHelpers/request");
-const ApiUrls = require("../helpers/ApiUrls");
-const Constants = require("../helpers/constants");
+import request from "../../../libHelpers/request.js";
+import ApiUrls from "../helpers/ApiUrls.js";
+import Constants from "../helpers/constants.js";
 const url = new ApiUrls();
 
 const exchangeRates = () => request(url.exchangeRates, {}, Constants);
 
-module.exports = {
+const exportedObject ={
 	exchangeRates
 };
+export default exportedObject

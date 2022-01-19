@@ -1,11 +1,10 @@
-const request = require("../../../libHelpers/request");
-const ApiUrls = require("../helpers/ApiUrls");
-const Utils = require("../../../libHelpers/utilities");
-const parameterChecker = require("../../../libHelpers/parameterChecker");
-const Constants = require("../helpers/constants");
+import request from "../../../libHelpers/request.js";
+import ApiUrls from "../helpers/ApiUrls.js";
+import {isArray} from "../../../libHelpers/utilities.js";
+import parameterChecker from "../../../libHelpers/parameterChecker.js";
+import Constants from "../helpers/constants.js";
 
 const url = new ApiUrls();
-
 const coinsList = (params = "") => {
 	return request(url.coins.list, params, Constants);
 };
@@ -13,10 +12,10 @@ const coinsList = (params = "") => {
 const coinMarkets = (params) => {
 	params = parameterChecker(params, ["vs_currency"], "");
 
-	if (Utils.isArray(params["ids"])) {
+	if (isArray(params["ids"])) {
+
 		params.ids = params.ids.join(",");
 	}
-
 	return request(url.coins.market, params, Constants);
 };
 
@@ -75,8 +74,7 @@ const ohlcById = (params) => {
 		Constants
 	);
 };
-
-module.exports = {
+const exportedObject = {
 	coinsList,
 	coinMarkets,
 	coinById,
@@ -87,3 +85,5 @@ module.exports = {
 	statusUpdateById,
 	ohlcById
 };
+
+export default exportedObject;

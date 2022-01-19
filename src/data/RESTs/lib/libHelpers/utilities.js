@@ -1,4 +1,5 @@
 /**
+import exportedObject from './../cryptos/CoinGecko/helpers/constants';
  * @description Internal helper to check if parameter is a string
  * @function isString
  * @param {*} str
@@ -95,7 +96,7 @@ const _WARN_ = (title = "", detail = "") => {
 
 //
 
-module.exports = {
+export  {
 	isString,
 	isStringEmpty,
 	isDate,
@@ -104,3 +105,4 @@ module.exports = {
 	isArray,
 	_WARN_
 };
+

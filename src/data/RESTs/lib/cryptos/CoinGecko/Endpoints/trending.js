@@ -1,10 +1,9 @@
-const request = require("../../../libHelpers/request");
-const ApiUrls = require("../helpers/ApiUrls");
-const Constants = require("../helpers/constants");
+import request from "../../../libHelpers/request.js";
+import ApiUrls from "../helpers/ApiUrls.js";
+import Constants from "../helpers/constants.js";
 const url = new ApiUrls();
 
 const searchTrending = () => request(url.trending, {}, Constants);
 
-module.exports = {
-	searchTrending
-};
+const exportedObject = {searchTrending}
+export default exportedObject;

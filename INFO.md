@@ -29,6 +29,7 @@ Proyecto para crear una aplicación de escritorio adaptable a web con electron y
 21. `yarn add lowdb@latest @types/lowdb@latest` Lowdb como pequeña base de datos para la aplicacion y guardar las configuraciones del usuario
 22. `yarn add express@latest morgan@latest nodemon@latest` crear las dependencias necesariar para usar con lowDB como servidor
 23. `yarn add json-server@latest` Para crear una rest basica para el lowDb
+24. `yarn add axios@latest` Para hacer fetchs desde las clases tanto desde el cliente como desde el servidor
 
 ### Opcional Para Colgar el trabajo en sitios distribuidos para que puedan usarlo otras personas: `yarn create @electron-forge/cli import`
 

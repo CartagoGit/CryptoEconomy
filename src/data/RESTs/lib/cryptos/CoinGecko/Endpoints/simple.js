@@ -1,17 +1,17 @@
-const request = require("../../../libHelpers/request");
-const ApiUrls = require("../helpers/ApiUrls");
-const Utils = require("../../../libHelpers/utilities");
-const parameterChecker = require("../../../libHelpers/parameterChecker");
-const Constants = require("../helpers/constants");
+import request from "../../../libHelpers/request.js";
+import ApiUrls from "../helpers/ApiUrls.js";
+import {isArray} from "../../../libHelpers/utilities.js";
+import parameterChecker from "../../../libHelpers/parameterChecker.js";
+import Constants from "../helpers/constants.js";
 
 const url = new ApiUrls();
 
 const price = (params) => {
-	if (Utils.isArray(params["vs_currencies"])) {
+	if (isArray(params["vs_currencies"])) {
 		params.vs_currencies = params.vs_currencies.join(",");
 	}
 
-	if (Utils.isArray(params["ids"])) {
+	if (isArray(params["ids"])) {
 		params.ids = params.ids.join(",");
 	}
 
@@ -23,11 +23,11 @@ const price = (params) => {
 };
 
 const tokenPrice = (params) => {
-	if (Utils.isArray(params["contract_addresses"])) {
+	if (isArray(params["contract_addresses"])) {
 		params.contract_addresses = params.contract_addresses.join(",");
 	}
 
-	if (Utils.isArray(params["vs_currencies"])) {
+	if (isArray(params["vs_currencies"])) {
 		params.vs_currencies = params.vs_currencies.join(",");
 	}
 	return request(
@@ -41,8 +41,6 @@ const supportedVsCurrencies = () => {
 	return request(url.simple.supportedVsCurrencies, {}, Constants);
 };
 
-module.exports = {
-	price,
-	tokenPrice,
-	supportedVsCurrencies
-};
+const exportedObject = { price, tokenPrice, supportedVsCurrencies };
+
+export default exportedObject;

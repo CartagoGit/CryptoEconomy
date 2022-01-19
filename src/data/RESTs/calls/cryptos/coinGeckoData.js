@@ -1,10 +1,10 @@
 //Usamos la libreria, modificandola para poder usarla serverless de https://github.com/tosunthex/CoinGecko_NodeJs
 
 //1. Import coingeckojs
-import {CoinGeckoLib} from "../../lib/cryptos/CoinGecko/CoinGeckoLib.js";
+import CoinGecko from "../../lib/cryptos/CoinGecko/CoinGeckoLib.js";
 
 //2. Initiate the CoinGecko API Client
-const CoinGeckoClient = new CoinGeckoLib();
+const CoinGeckoClient = new CoinGecko();
 
 //3. Make calls
 
@@ -65,6 +65,8 @@ export const getAllFromCoingeckoByMarket = async ({
 		...(!!sparkline && { sparkline }),
 		...(!!price_change_percentage && { price_change_percentage })
 	});
+	console.log(res);
 	const data = res.data;
 	return data;
 };
+

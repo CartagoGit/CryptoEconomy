@@ -19,7 +19,7 @@ import _companies from "./Endpoints/companies.js";
 
 //Helpers
 
-export class CoinGeckoLib {
+class CoinGeckoLib {
     ping() {
         return _ping.pingRequest();
     }
@@ -268,4 +268,4 @@ CoinGeckoLib.TIMEOUT = Constants.TIMEOUT;
 
 //
 
-module.exports = exports = CoinGeckoLib;
+export default CoinGeckoLib;

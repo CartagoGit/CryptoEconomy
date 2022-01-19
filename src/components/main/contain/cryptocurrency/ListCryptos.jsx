@@ -7,7 +7,7 @@ export const ListCryptos = () => {
 	const [cryptosData, setCryptosData] = useState([]);
 
 	useEffect(() => {
-		if (cryptosData.length === 0) {
+		if (cryptosData?.length === 0) {
 			const fetchData = async () => {
 				setCryptosData(await getPlataformsMergeMarketData());
 			};
@@ -19,7 +19,7 @@ export const ListCryptos = () => {
 	return (
 		<>
 			<div className='list'>
-				{cryptosData.map((cryptoData) => {
+				{cryptosData?.map((cryptoData) => {
 					console.log(cryptoData);
 
 					return <RowCrypto key={cryptoData.id} {...cryptoData} />;

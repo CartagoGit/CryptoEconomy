@@ -1,8 +1,8 @@
-const request = require("../../../libHelpers/request");
-const ApiUrls = require("../helpers/ApiUrls");
-const deleteParameter = require("../../../libHelpers/deleteParameter");
+import request from "../../../libHelpers/request.js";
+import ApiUrls from "../helpers/ApiUrls.js";
+import deleteParameter from "../../../libHelpers/deleteParameter.js";
+import Constants from "../helpers/constants.js";
 const url = new ApiUrls();
-const Constants = require("../helpers/constants");
 
 const derivatives = (params) =>
 	request(url.derivatives.Derivatives, params, Constants);
@@ -20,9 +20,10 @@ const derivativesExchangeById = (params) =>
 const derivativesExchangeList = () =>
 	request(url.derivatives.DerivativesExchangeList, {}, Constants);
 
-module.exports = {
+const exportedObject = {
 	derivatives,
 	derivativesExchanges,
 	derivativesExchangeById,
 	derivativesExchangeList
 };
+export default exportedObject;

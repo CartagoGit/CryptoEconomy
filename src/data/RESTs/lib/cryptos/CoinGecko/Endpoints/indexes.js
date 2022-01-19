@@ -1,7 +1,7 @@
-const request = require("../../../libHelpers/request");
-const ApiUrls = require("../helpers/ApiUrls");
-const deleteParameter = require("../../../libHelpers/deleteParameter");
-const Constants = require("../helpers/constants");
+import request from "../../../libHelpers/request.js";
+import ApiUrls from "../helpers/ApiUrls.js";
+import deleteParameter from "../../../libHelpers/deleteParameter.js";
+import Constants from "../helpers/constants.js";
 
 const url = new ApiUrls();
 
@@ -16,8 +16,10 @@ const indexesByMarketIdandId = (params) =>
 
 const indexesList = () => request(url.indexes.GetMarketIndexes, {}, Constants);
 
-module.exports = {
+const exportedObject = {
 	indexes,
 	indexesByMarketIdandId,
 	indexesList
 };
+
+export default exportedObject;

@@ -1,4 +1,4 @@
-class ApiUrls {
+export class ApiUrls {
 	get ping() {
 		return "/ping";
 	}
@@ -116,4 +116,4 @@ class ApiUrls {
 	}
 }
 
-module.exports = ApiUrls;
+export default ApiUrls;

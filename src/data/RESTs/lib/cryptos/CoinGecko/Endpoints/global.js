@@ -1,13 +1,15 @@
-const request = require("../../../libHelpers/request");
-const ApiUrls = require("../helpers/ApiUrls");
-const Constants = require("../helpers/constants");
+import request from "../../../libHelpers/request.js";
+import ApiUrls from "../helpers/ApiUrls.js";
+import Constants from "../helpers/constants.js";
 const url = new ApiUrls();
 
 const global = () => request(url.global.global, {}, Constants);
 
 const globalDefi = () => request(url.global.globalDefi, {}, Constants);
 
-module.exports = {
+const exportedObject = {
 	global,
 	globalDefi
 };
+
+export default exportedObject;

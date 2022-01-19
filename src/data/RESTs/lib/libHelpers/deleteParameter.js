@@ -4,4 +4,4 @@ const deleteParameter = (willBeDeleted = [],allParams = {}) => {
 	});
 	return allParams;
 };
-module.exports = deleteParameter;
+export default deleteParameter;

@@ -7,12 +7,12 @@
  * @returns {Object} - {path, method, host, port} Options for request
  */
 
-const Utilities = require("./utilities.js");
+import  {isObject} from "./utilities.js";
 // const Constants = require("../cryptos/CoinGecko/helpers/constants.js");
 
 const BuildRequestOptions = (path, params, Constants) => {
 	//Stringify object params if exist
-	if (Utilities.isObject(params)) {
+	if (isObject(params)) {
 		const queryString = new URLSearchParams(params);
 		params = queryString.toString(params);
 		path = `${path}?${params}`;
@@ -29,4 +29,4 @@ const BuildRequestOptions = (path, params, Constants) => {
 	};
 };
 
-module.exports = BuildRequestOptions;
+export default BuildRequestOptions;

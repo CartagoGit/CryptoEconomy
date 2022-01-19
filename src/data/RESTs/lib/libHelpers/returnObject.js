@@ -16,4 +16,4 @@ const ReturnObject = (success, message, code, data, from) => {
 
 //
 
-module.exports = ReturnObject;
+export default ReturnObject;

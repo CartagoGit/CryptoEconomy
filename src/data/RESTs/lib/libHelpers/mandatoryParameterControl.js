@@ -1,9 +1,9 @@
-const Utils = require("./utilities");
+import  {_WARN_ } from "./utilities.js";
 const mandatoryParameterControl = (mandatory= [],allParams = {}) => {
     mandatory.forEach((param) => {
         if (typeof allParams[param] === "undefined") {
-            Utils._WARN_("Missing parameter", "params must include `"+ param +"` and be a of type: String or Object");
+            _WARN_("Missing parameter", "params must include `"+ param +"` and be a of type: String or Object");
         }
     });
 };
-module.exports = mandatoryParameterControl;
+export default mandatoryParameterControl;

@@ -107,8 +107,7 @@ const EVENT_TYPE = {
 };
 
 //
-
-module.exports = {
+const exportedObject = {
 	BASE,
 	HOST,
 	API_VERSION,
@@ -122,3 +121,7 @@ module.exports = {
 	EVENT_TYPE,
 	TIMEOUT
 };
+
+
+
+export default exportedObject;

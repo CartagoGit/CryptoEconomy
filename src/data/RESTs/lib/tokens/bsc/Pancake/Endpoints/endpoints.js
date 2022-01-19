@@ -1,6 +1,6 @@
-const request = require("../../../../libHelpers/request");
+const request = require("../../../../libHelpers/request").default;
 const ApiUrls = require("../helpers/ApiUrls");
-const parameterChecker = require("../../../../libHelpers/parameterChecker");
+const parameterChecker = require("../../../../libHelpers/parameterChecker").default;
 const Constants = require("../helpers/constants");
 
 const url = new ApiUrls();

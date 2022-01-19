@@ -1,7 +1,7 @@
-const request = require("../../../libHelpers/request");
-const ApiUrls = require("../helpers/ApiUrls");
-const parameterChecker = require("../../../libHelpers/parameterChecker");
-const Constants = require("../helpers/constants");
+import request from "../../../libHelpers/request.js";
+import ApiUrls from "../helpers/ApiUrls.js";
+import parameterChecker from "../../../libHelpers/parameterChecker.js";
+import Constants from "../helpers/constants.js";
 const url = new ApiUrls();
 
 const exchanges = (params) =>
@@ -47,7 +47,7 @@ const exchangesVolumeChartById = (params) => {
 	);
 };
 
-module.exports = {
+const exportedObject ={
 	exchanges,
 	exchangesList,
 	exchangeById,
@@ -55,3 +55,5 @@ module.exports = {
 	exchangesStatusUpdatesById,
 	exchangesVolumeChartById
 };
+
+export default exportedObject;

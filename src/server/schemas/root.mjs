@@ -22,19 +22,44 @@ const schemas = {
 // const pepe = new Cryptos(["hay algo mas"]);
 // console.log(new Cryptos([ "hay algo" ]));
 // pepe.addCrypto({ name: "pepote" });
-const unacrypto = new Crypto({name: "esto es una crypto", price_usd: "123",symbol:"SYMBOLOGI"} );
-const unacrypto2 = new Crypto({name: "123214", price_usd: "13123",symbol:"edwqewqI"} );
+const unacrypto = new Crypto({
+	name: "esto es una crypto",
+	price_usd: "123",
+	symbol: "SYMBOLOGI"
+});
+const unacrypto2 = new Crypto({
+	name: "123214",
+	price_usd: "13123",
+	symbol: "edwqewqI"
+});
 // const otracrypto = new Crypto({name: "esto es una crypto", price_usd: "123", symbol:"RTA"} );
 // pepe.setCryptos(unacrypto);
 // // console.log(pepe.constructor);
 // // console.log( typeof unacrypto);
-// console.log(pepe.checkTypeData([1])); 
+// console.log(pepe.checkTypeData([1]));
 // console.log(pepe);
-const pepa = new Cryptos([{unobjeto: "paproba"},unacrypto]);
+const pepa = new Cryptos([{ unobjeto: "paproba" }, unacrypto]);
 // pepa.addCryptos(pepe);
-console.log("pepa", pepa);
-pepa.setCryptos(unacrypto2)
-console.log("pepa2", pepa);
+// console.log("pepa", pepa);
+pepa.setCryptos(unacrypto2);
+const pruebafetch = () => {
+	const algo = pepa.fetchInfo();
+	 pepa.setCryptos(algo);
+	console.log(algo);
+	// console.log(pepa);
+	//
+	//
+};
+
+const coingecko = pruebafetch();
+
+// console.log("pepa2", pepa);
+console.log(coingecko);
+// console.log(coingecko);
+// await pepa.fetchInfo().then(pepa.setCryptos(coingecko));
+// pepa.setCryptos(coingecko);
+// console.log("pepa2", pepa);
+
 // console.log(pepe.fetchInfo());
 // pepe.fetchInfo();
 // console.log( schemas.cryptos);

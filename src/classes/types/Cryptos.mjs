@@ -1,4 +1,4 @@
-import  getInfoForLowDB  from "../../data/getMergeData.js";
+import  {getPlataformsMergeMarketData}  from "../../data/getMergeData.js";
 import { isArray, isEmptyObject, isObject } from "../../helpers/isX.mjs";
 import { Crypto } from "../components/crypto.mjs";
 
@@ -15,7 +15,7 @@ export class Cryptos {
 		object: "object",
 		invalid: "invalid"
 	};
-	#isUpdateNecessary = true;
+	#isUpdateNecessary;
 
 	constructor(data = null) {
 		if (!this.#isValidData(data)) return;
@@ -69,8 +69,8 @@ export class Cryptos {
 		this.amount = null;
 	};
 
-	fetchInfo = () => {
-		// console.log(getPlataformsMergeMarketData());
+	fetchInfo = async () => {
+		return await getPlataformsMergeMarketData();
 	};
 
 	#setInfo = () => {
@@ -86,6 +86,7 @@ export class Cryptos {
 	};
 
 	#checkTypeData = (data) => {
+		this.#isUpdateNecessary = false;	
 		let typeData;
 		const typesData = this.#types;
 		if (!data) typeData = typesData.invalid;
