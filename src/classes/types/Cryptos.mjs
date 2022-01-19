@@ -26,15 +26,15 @@ export class Cryptos {
 	static getSchema = () => {
 		return new this();
 	};
-	setCryptos = (data) => {
+	setCryptos = async (data) => {
 		if (!this.#isValidData(data)) return;
 		const auxList = this.list;
 		this.list = [];
-		this.addCryptos(data);
+		await this.addCryptos(data);
 		this.#isUpdateNecessary ? this.#setInfo() : this.list = auxList;
 	};
 
-	addCryptos = (data = []) => {
+	addCryptos = async (data = []) => {
 		const type = this.#checkTypeData(data);
 		const typesData = this.#types;
 		if (type === typesData.invalid) return;

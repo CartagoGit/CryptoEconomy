@@ -10,12 +10,13 @@ const request = async (path, params, Constants) => {
 			const url = `${options.uri}`;
 			axios(url).then(
 				async (res) => {
-					console.log(res);
 					const body = await res.data;
-					if (!!body.error || !(res.status < 200 || res.status >= 300))
+					if (!!body.error || (res.status < 200 || res.status >= 300)) {
 						throw new Error(
 							"Incorrect response from api: " + options.uri.toString()
 						);
+					}
+
 					resolve(
 						returnObject(
 							!(res.status < 200 || res.status >= 300),

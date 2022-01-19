@@ -4,20 +4,19 @@ import { swalBasic } from "../../../../helpers/alerts";
 export const RowCrypto = (data) => {
 	const {
 		id,
-		image,
+		image_url,
 		symbol,
 		name,
 		market_cap_rank,
 		market_cap,
-		current_price,
-		price_change_percentage_1h_in_currency,
-		// price_change_percentage_1y_in_currency,
-		price_change_percentage_7d_in_currency,
-		price_change_percentage_14d_in_currency,
-		price_change_percentage_24h_in_currency,
-		price_change_percentage_30d_in_currency,
-		price_change_percentage_200d_in_currency
+		price_usd,
+		price_change_percentage
 	} = data;
+	const { _1h, _7d, _14d, _24h, _30d, _200d, _1y } = price_change_percentage;
+
+	const changeFiatCurrency = () => {//TODO
+
+	}
 
 	const getColorPercentage = (num) => {
 		if (num === 0) return null;
@@ -38,82 +37,31 @@ export const RowCrypto = (data) => {
 	return (
 		<div className='row' onClick={handleClickRow}>
 			<div className='align-left'>#{market_cap_rank}</div>
-			<img src={image} alt={id} width={30} height={30}></img>
+			<img src={image_url} alt={id} width={30} height={30}></img>
 			<div className='col align-left'>{name}</div>
 			<div className='col align-left'>{symbol.toUpperCase()}</div>
-			<div className='col'>{current_price} $</div>
-			<div
-				className='col'
-				style={{
-					color: getColorPercentage(price_change_percentage_1h_in_currency)
-				}}
-			>
-				{Math.round(
-					(price_change_percentage_1h_in_currency + Number.EPSILON) * 100
-				) / 100}
-				%
+			<div className='col'>{price_usd} $</div>
+			<div className='col' style={{ color: getColorPercentage(_1h) }}>
+				{Math.round((_1h + Number.EPSILON) * 100) / 100}%
 			</div>
-			<div
-				className='col'
-				style={{
-					color: getColorPercentage(price_change_percentage_7d_in_currency)
-				}}
-			>
-				{Math.round(
-					(price_change_percentage_7d_in_currency + Number.EPSILON) * 100
-				) / 100}
-				%
+			<div className='col' style={{ color: getColorPercentage(_7d) }}>
+				{Math.round((_7d + Number.EPSILON) * 100) / 100}%
 			</div>
-			<div
-				className='col'
-				style={{
-					color: getColorPercentage(price_change_percentage_14d_in_currency)
-				}}
-			>
-				{Math.round(
-					(price_change_percentage_14d_in_currency + Number.EPSILON) * 100
-				) / 100}
-				%
+			<div className='col' style={{ color: getColorPercentage(_14d) }}>
+				{Math.round((_14d + Number.EPSILON) * 100) / 100}%
 			</div>
-			<div
-				className='col'
-				style={{
-					color: getColorPercentage(price_change_percentage_24h_in_currency)
-				}}
-			>
-				{Math.round(
-					(price_change_percentage_24h_in_currency + Number.EPSILON) * 100
-				) / 100}
-				%
+			<div className='col' style={{ color: getColorPercentage(_24h) }}>
+				{Math.round((_24h + Number.EPSILON) * 100) / 100}%
 			</div>
-			<div
-				className='col'
-				style={{
-					color: getColorPercentage(price_change_percentage_30d_in_currency)
-				}}
-			>
-				{Math.round(
-					(price_change_percentage_30d_in_currency + Number.EPSILON) * 100
-				) / 100}
-				%
+			<div className='col' style={{ color: getColorPercentage(_30d) }}>
+				{Math.round((_30d + Number.EPSILON) * 100) / 100}%
 			</div>
-			<div
-				className='col'
-				style={{
-					color: getColorPercentage(price_change_percentage_200d_in_currency)
-				}}
-			>
-				{Math.round(
-					(price_change_percentage_200d_in_currency + Number.EPSILON) * 100
-				) / 100}
-				%
+			<div className='col' style={{ color: getColorPercentage(_200d) }}>
+				{Math.round((_200d + Number.EPSILON) * 100) / 100}%
 			</div>
-			{/* <div className='col' style={{color: getColorPercentage(price_change_percentage_1y_in_currency)}}>
-				{Math.round(
-					(price_change_percentage_1y_in_currency + Number.EPSILON) * 100
-				) / 100}
-				%
-			</div> */}
+			<div className='col' style={{ color: getColorPercentage(_1y) }}>
+				{Math.round((_1y + Number.EPSILON) * 100) / 100}%
+			</div>
 			<div className='col'>{market_cap} $</div>
 		</div>
 	);

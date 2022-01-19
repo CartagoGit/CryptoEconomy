@@ -57,7 +57,7 @@ export const getAllFromCoingeckoByMarket = async ({
 }) => {
 	const res = await CoinGeckoClient.coins.markets({
 		vs_currency,
-		...(!!ids && { ids }),
+		...(!!ids && { ids }), // if sent param, ids, if not try without another. Its only vs_currency required
 		...(!!category && { category }),
 		...(!!order && { order }),
 		...(!!per_page && { per_page }),
@@ -65,8 +65,7 @@ export const getAllFromCoingeckoByMarket = async ({
 		...(!!sparkline && { sparkline }),
 		...(!!price_change_percentage && { price_change_percentage })
 	});
-	console.log(res);
+	//res.data is every info from cryptos in this API request
 	const data = res.data;
 	return data;
 };
-

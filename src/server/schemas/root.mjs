@@ -42,10 +42,17 @@ const pepa = new Cryptos([{ unobjeto: "paproba" }, unacrypto]);
 // pepa.addCryptos(pepe);
 // console.log("pepa", pepa);
 pepa.setCryptos(unacrypto2);
-const pruebafetch = () => {
-	const algo = pepa.fetchInfo();
-	 pepa.setCryptos(algo);
-	console.log(algo);
+const pruebafetch = async () => {
+	// let algo
+	const algo = await pepa.fetchInfo().then(async (jei) => {
+		await pepa.setCryptos(jei);
+		// console.log(jei);
+		// console.log();
+		// console.log(pepa.getCryptos());
+	});
+
+	// console.log(algo);
+
 	// console.log(pepa);
 	//
 	//
@@ -54,7 +61,7 @@ const pruebafetch = () => {
 const coingecko = pruebafetch();
 
 // console.log("pepa2", pepa);
-console.log(coingecko);
+// console.log(coingecko);
 // console.log(coingecko);
 // await pepa.fetchInfo().then(pepa.setCryptos(coingecko));
 // pepa.setCryptos(coingecko);
