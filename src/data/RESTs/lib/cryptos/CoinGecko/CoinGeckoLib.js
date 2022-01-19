@@ -1,25 +1,25 @@
-const _ping = require("./Endpoints/ping");
-const Constants = require("./helpers/constants");
-const _simple = require("./Endpoints/simple");
-const _coins = require("./Endpoints/coins");
-const _contract = require("./Endpoints/contract");
-const _assetPlatform = require("./Endpoints/assetPlatform");
-const _categories = require("./Endpoints/categories");
-const _exchanges = require("./Endpoints/exchanges");
-const _indexes = require("./Endpoints/indexes");
-const _financePlatforms = require("./Endpoints/financePlatforms");
-const _derivatives = require("./Endpoints/derivatives");
-const _statusUpdates = require("./Endpoints/statusUpdate");
-const _events = require("./Endpoints/events");
-const _exchangeRates = require("./Endpoints/exchangeRates");
-const _trending = require("./Endpoints/trending");
-const _global = require("./Endpoints/global");
-const _companies = require("./Endpoints/companies");
+import _ping from "./Endpoints/ping.js";
+import Constants from "./helpers/constants.js";
+import _simple from "./Endpoints/simple.js";
+import _coins from "./Endpoints/coins.js";
+import _contract from "./Endpoints/contract.js";
+import _assetPlatform from "./Endpoints/assetPlatform.js";
+import _categories from "./Endpoints/categories.js";
+import _exchanges from "./Endpoints/exchanges.js";
+import _indexes from "./Endpoints/indexes.js";
+import _financePlatforms from "./Endpoints/financePlatforms.js";
+import _derivatives from "./Endpoints/derivatives.js";
+import _statusUpdates from "./Endpoints/statusUpdate.js";
+import _events from "./Endpoints/events.js";
+import _exchangeRates from "./Endpoints/exchangeRates.js";
+import _trending from "./Endpoints/trending.js";
+import _global from "./Endpoints/global.js";
+import _companies from "./Endpoints/companies.js";
 
 
 //Helpers
 
-class CoinGeckoLib {
+export class CoinGeckoLib {
     ping() {
         return _ping.pingRequest();
     }

@@ -3,6 +3,8 @@
       "src/server/data/*"
     ],
     "watch": [
-      "src/server/*"
+      "src/server/*",
+      "src/classes/*"
+
     ]
   }

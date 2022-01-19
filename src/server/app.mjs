@@ -17,6 +17,7 @@ app.use("/*", (req, res) => res.redirect(ROUTE_API)); // For redirect any strang
 // error handler
 app.use(function (err, req, res, next) {
 	res.status(500).json({
+		ok: false,
 		error: err.message
 	});
 });

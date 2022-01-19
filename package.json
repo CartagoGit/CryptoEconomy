@@ -7,6 +7,7 @@
 	"license": "MIT",
 	"repository": "https://github.com/CartagoGit/CryptoEconomy.git",
 	"main": "./public/electron.js",
+	"type":"module",
 	"homepage": "./",
 	"dependencies": {
 		"@apollo/client": "^3.5.6",

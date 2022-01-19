@@ -1,7 +1,7 @@
-export const portfoliosSchema = {	
-	portfolios: [], //portfolio list
-	amount_portfolios: null,
-	amount_usd: null
+export const portfoliosSchema = {
+	amount_usd: null,
+	amount: null,
+	list: [] //portfolio list
 };
 
 //TODO

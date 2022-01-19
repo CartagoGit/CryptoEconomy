@@ -1,13 +1,16 @@
 import { router } from "./root.routes.mjs";
 import { TYPES } from "../constants.mjs";
-const route = TYPES.tokens.route;
+import { crud } from "../controllers/crud.controller.mjs";
+const { route, name: type } = TYPES.tokens;
+const call = (req, res) => crud(req, res, type);
 
 export const setTokensRoutes = () => {
-	router.get(route, (req, res) => {
-		res.send("Api de Tokens");
-	});
+	//CRUD neccesary for this type
+	router.route(route).get(call).patch(call);
 
-	router.get(route + "*", (req, res) => {
-		res.redirect(`${req.baseUrl}${route}`);
-	});
+	//Others aditional routes
+	// type required, and params to look for in data
+
+	//Redirect others request to main route
+	router.get(route + "*", (req, res) => res.redirect(`${req.baseUrl}${route}`));
 };

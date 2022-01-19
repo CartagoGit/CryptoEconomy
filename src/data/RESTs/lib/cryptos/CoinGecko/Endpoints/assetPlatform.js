@@ -1,9 +1,9 @@
-const request  = require("../../../libHelpers/request");
-const ApiUrls = require("../helpers/ApiUrls.js");
-const Constants = require("../helpers/constants");
+import request from "../../../libHelpers/request";
+import ApiUrls from "../helpers/ApiUrls.js";
+import Constants from "../helpers/constants";
 const url = new ApiUrls();
 const assetPlatformRequest = () => request(url.assetPlatform, {}, Constants);
 
-module.exports = {
+export default {
     assetPlatformRequest
 }

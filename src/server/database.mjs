@@ -6,6 +6,7 @@ import { fileURLToPath } from "url";
 import fs from "fs";
 import { TYPES } from "./constants.mjs";
 import { getSchema } from "./schemas/root.mjs";
+import { createDataOnlyWithSchema } from "./helpers/schemaHelpers.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const folder = "data";
@@ -17,16 +18,23 @@ const createAdapter = (fileName = null) => {
 //Every param is a json with adapter to access and take or write data
 const db = {};
 //Asign a new DB for every type of data
-Object.keys(TYPES).map((key) => {
-	db[key] = new Low(createAdapter());
-});
+export const createDb = () => {
+	Object.keys(TYPES).map((key) => {
+		db[key] = new Low(createAdapter());
+	});
+};
 
 export const createConnection = async () => {
+	createDb();
 	await Promise.all(
 		Object.keys(db).map(async (key) => {
 			const adapter = createAdapter(key);
 			const low = new Low(adapter);
-			await low.read();
+			try {
+				await low.read();
+				
+				createDataOnlyWithSchema(low, key);
+			} catch (error) {}
 
 			if (!low.data) {
 				low.data = getSchema(key);

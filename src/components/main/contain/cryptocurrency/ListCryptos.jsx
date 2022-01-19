@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getPlataformsMergeMarketData } from "../../../../data/getMergeData";
+import { getPlataformsMergeMarketData } from "../../../../data/getMergeData.js";
 
 import { RowCrypto } from "./RowCrypto";
 
@@ -20,7 +20,7 @@ export const ListCryptos = () => {
 		<>
 			<div className='list'>
 				{cryptosData.map((cryptoData) => {
-					{/* console.log(cryptoData); */}
+					console.log(cryptoData);
 
 					return <RowCrypto key={cryptoData.id} {...cryptoData} />;
 				})}

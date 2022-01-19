@@ -1,18 +1,19 @@
 import { router } from "./root.routes.mjs";
 import { TYPES } from "../constants.mjs";
-import {
-	getSession,
-	getSessionActivePage,
-	updateSession
-} from "../controllers/session.controller.mjs";
-const route = TYPES.session.route;
+import { crud } from "../controllers/crud.controller.mjs";
+const { route, name: type } = TYPES.session;
+const call = (req, res) => crud(req, res, type);
 
 export const setSessionRoutes = () => {
-	router.get(route, getSession);
-	router.get(route + "/active_page", getSessionActivePage);
-	router.put(route, updateSession);
+	//CRUD neccesary for this type
+	router.route(route).get(call).patch(call);
 
-	router.get(route + "*", (req, res) =>
-		res.redirect(`${req.baseUrl}${route}`)
+	//Others aditional routes
+	// type required, and params to look for in data
+	router.get(route + "/active_page", (req, res) =>
+		crud(req, res, type, "active_page")
 	);
+
+	//Redirect others request to main route
+	router.get(route + "*", (req, res) => res.redirect(`${req.baseUrl}${route}`));
 };

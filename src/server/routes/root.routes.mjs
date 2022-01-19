@@ -1,6 +1,6 @@
 import Router from "express";
 import { createNewDB } from "../database.mjs";
-import { setCryposRoutes } from "./cryptos.routes.mjs";
+import { setCryptosRoutes } from "./cryptos.routes.mjs";
 import { setFavoritesRoutes } from "./favorites.routes.mjs";
 import { setPortfolioRoutes } from "./portfolios.routes.mjs";
 import { setSessionRoutes } from "./session.routes.mjs";
@@ -14,17 +14,20 @@ export const router = Router();
 // 	next();
 // });
 
+//Response a message in base route
 router.get("/", (req, res) => {
-	res.send("Welcome into CryptoEconomy lowDB API");
+	res.status(404).send("Welcome into CryptoEconomy lowDB API. You used a bad request data");
 });
 
-setCryposRoutes();
+
+setCryptosRoutes();
 setTokensRoutes();
 setFavoritesRoutes();
 setPortfolioRoutes();
 setSessionRoutes();
 setWalletsRoutes();
 
+//Adicional to reset DB
 router.get("/reset_db", (req, res) => {
 	if (req.body.reset_db === true) {
 		createNewDB();
@@ -34,4 +37,5 @@ router.get("/reset_db", (req, res) => {
 	}
 });
 
+//Redirect others request to main route
 router.get("/*", (req, res) => res.redirect(req.baseUrl));

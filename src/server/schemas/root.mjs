@@ -1,22 +1,48 @@
-import { sessionSchema } from "./session.mjs";
-import { portfoliosSchema } from "./portfolios.mjs";
-import { walletsSchema } from "./wallets.mjs";
-import { tokensSchema } from "./tokens.mjs";
-import { favoritesSchema } from "./favorites.mjs";
-import { cryptosSchema } from "./cryptos.mjs";
+//Types
+import { portfoliosSchema } from "./types/portfolios.mjs";
+import { walletsSchema } from "./types/wallets.mjs";
+import { tokensSchema } from "./types/tokens.mjs";
+import { favoritesSchema } from "./types/favorites.mjs";
+import { Cryptos } from "../../classes/types/Cryptos.mjs";
+import { Session } from "../../classes/types/Session.mjs";
+import { Crypto } from "../../classes/components/crypto.mjs";
 
 //Schemas List
 const schemas = {
-	session: sessionSchema,
+	session: Session.getSchema(),
 	portfolios: portfoliosSchema,
 	wallets: walletsSchema,
 	tokens: tokensSchema,
 	favorites: favoritesSchema,
-	cryptos: cryptosSchema
+	cryptos: Cryptos.getSchema()
 };
-
+// schemas.cryptos.addCryptos([{price_usd:"hola"}])
+// console.log(Cryptos.getSchema());
+// console.log(new Cryptos([{ name: "hay algo" }, { name: "y algo mas" }]));
+// const pepe = new Cryptos(["hay algo mas"]);
+// console.log(new Cryptos([ "hay algo" ]));
+// pepe.addCrypto({ name: "pepote" });
+const unacrypto = new Crypto({name: "esto es una crypto", price_usd: "123",symbol:"SYMBOLOGI"} );
+const unacrypto2 = new Crypto({name: "123214", price_usd: "13123",symbol:"edwqewqI"} );
+// const otracrypto = new Crypto({name: "esto es una crypto", price_usd: "123", symbol:"RTA"} );
+// pepe.setCryptos(unacrypto);
+// // console.log(pepe.constructor);
+// // console.log( typeof unacrypto);
+// console.log(pepe.checkTypeData([1])); 
+// console.log(pepe);
+const pepa = new Cryptos([{unobjeto: "paproba"},unacrypto]);
+// pepa.addCryptos(pepe);
+console.log("pepa", pepa);
+pepa.setCryptos(unacrypto2)
+console.log("pepa2", pepa);
+// console.log(pepe.fetchInfo());
+// pepe.fetchInfo();
+// console.log( schemas.cryptos);
 //key is the name of schema
 export const getSchema = (key) => {
-	let schema = { db_type: key };
+	const schema = { db_type: key };
 	return { ...schema, ...schemas[key] };
 };
+
+// Components Schema List
+// export const getCryptoSchema = () => cryptoSchema;

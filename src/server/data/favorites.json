@@ -1,5 +1,7 @@
 {
   "db_type": "favorites",
+  "amount_cryptos": null,
   "cryptos": [],
+  "amount_tokens": null,
   "tokens": []
 }

@@ -1,10 +1,10 @@
 //Usamos la libreria, modificandola para poder usarla serverless de https://github.com/tosunthex/CoinGecko_NodeJs
 
 //1. Import coingeckojs
-const CoinGecko = require("../../lib/cryptos/CoinGecko/CoinGeckoLib");
+import {CoinGeckoLib} from "../../lib/cryptos/CoinGecko/CoinGeckoLib.js";
 
 //2. Initiate the CoinGecko API Client
-const CoinGeckoClient = new CoinGecko();
+const CoinGeckoClient = new CoinGeckoLib();
 
 //3. Make calls
 
@@ -35,8 +35,8 @@ const CoinGeckoClient = new CoinGecko();
  *
  * @param int page
  * @description Page through results
- * 
- * @params boolean 
+ *
+ * @params boolean
  * @description Include sparkline 7 days data (eg. true, false)
  *
  * @param string price_change_percentage
