@@ -1,6 +1,6 @@
 {
-  "db_type": "portfolios",
   "amount_usd": null,
   "amount": null,
-  "list": []
+  "list": [],
+  "db_type": "portfolios"
 }

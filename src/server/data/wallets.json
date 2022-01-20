@@ -1,6 +1,6 @@
 {
-  "db_type": "wallets",
   "amount_usd": null,
   "amount": null,
-  "list": []
+  "list": [],
+  "db_type": "wallets"
 }

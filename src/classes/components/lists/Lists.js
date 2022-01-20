@@ -1,9 +1,8 @@
-import { getPlataformsMergeMarketData } from "../../data/getMergeData.js";
-import { isNeededAnUpdate } from "../../helpers/classesHelpers.js";
-import { isArray, isEmptyObject, isObject } from "../../helpers/isX.js";
-import { CryptoInfo } from "../components/coins/CryptoInfo.js";
-
-export class Cryptos {
+export class Lists {
+	//TODO
+	static getSchema = () => {
+		return new this();
+	};
 	last_update_unix = null;
 	last_update = null;
 	list = [];
@@ -19,6 +18,7 @@ export class Cryptos {
 		wallet: "wallet",
 		wallets: "wallets",
 		portfolio: "portfolio",
+		favorites: "favorites",
 		session: "session",
 		object: "object",
 		invalid: "invalid"
@@ -31,9 +31,6 @@ export class Cryptos {
 		this.#isUpdateNecessary && this.#setInfo();
 	}
 
-	static getSchema = () => {
-		return new this();
-	};
 	setData = async (data) => {
 		if (!this.#isValidData(data)) return;
 		const auxList = this.list;
@@ -118,7 +115,7 @@ export class Cryptos {
 		else if (!isObject || isEmptyObject(data)) typeData = typesData.invalid;
 		else if (isArray(data)) typeData = typesData.array;
 		else if (this.#isCryptosObject(data)) typeData = typesData.cryptos;
-		else if (this.#isCryptoObject(data)) typeData = typesData.crypto;
+		else if (this.#isCryptoInfoObject(data)) typeData = typesData.crypto;
 		else if (isObject(data)) typeData = typesData.object;
 		else typeData = typesData.invalid;
 		return typeData;
@@ -136,7 +133,7 @@ export class Cryptos {
 		else return false;
 	};
 
-	#isCryptoObject = (data) => {
+	#isCryptoInfoObject = (data) => {
 		if (data instanceof CryptoInfo) return true;
 		else return false;
 	};

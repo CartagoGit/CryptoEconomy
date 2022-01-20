@@ -1,6 +1,5 @@
 import isX from "../../../helpers/isX.js";
 
-// Only Coin with Name
 export class Coin {
 	/**
 	 * @Statics
@@ -20,6 +19,8 @@ export class Coin {
 		const { name = null, symbol = null } = data;
 		this.name = name;
 		this.symbol = symbol;
+		this.added_at = isX.isEmptyObject(data) ? null: Date();
+		this.added_at_unix = isX.isEmptyObject(data) ? null : Date.now();
 	}
 
 	/**
