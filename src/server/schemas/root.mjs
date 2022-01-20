@@ -1,11 +1,14 @@
 //Types
-import { portfoliosSchema } from "./types/portfolios.mjs";
-import { walletsSchema } from "./types/wallets.mjs";
-import { tokensSchema } from "./types/tokens.mjs";
-import { favoritesSchema } from "./types/favorites.mjs";
-import { Cryptos } from "../../classes/types/Cryptos.mjs";
-import { Session } from "../../classes/types/Session.mjs";
-import { Crypto } from "../../classes/components/crypto.mjs";
+import { portfoliosSchema } from "./sections/portfolios.mjs";
+import { walletsSchema } from "./sections/wallets.mjs";
+import { tokensSchema } from "./sections/tokens.mjs";
+import { favoritesSchema } from "./sections/favorites.mjs";
+import { Cryptos } from "../../classes/sections/Cryptos.js";
+import { Session } from "../../classes/sections/Session.js";
+import { Token } from "../../classes/components/coins/Token.js";
+import { Coin } from "../../classes/components/coins/Coin.js";
+import { CoinInfo } from "../../classes/components/coins/CoinInfo.js";
+import { Crypto } from "../../classes/components/coins/Crypto.js";
 
 //Schemas List
 const schemas = {
@@ -16,65 +19,21 @@ const schemas = {
 	favorites: favoritesSchema,
 	cryptos: Cryptos.getSchema()
 };
-// schemas.cryptos.addCryptos([{price_usd:"hola"}])
-// console.log(Cryptos.getSchema());
-// console.log(new Cryptos([{ name: "hay algo" }, { name: "y algo mas" }]));
-// const pepe = new Cryptos(["hay algo mas"]);
-// console.log(new Cryptos([ "hay algo" ]));
-// pepe.addCrypto({ name: "pepote" });
-const unacrypto = new Crypto({
-	name: "esto es una crypto",
-	price_usd: "123",
-	symbol: "SYMBOLOGI"
-});
-const unacrypto2 = new Crypto({
-	name: "123214",
-	price_usd: "13123",
-	symbol: "edwqewqI"
-});
-// const otracrypto = new Crypto({name: "esto es una crypto", price_usd: "123", symbol:"RTA"} );
-// pepe.setCryptos(unacrypto);
-// // console.log(pepe.constructor);
-// // console.log( typeof unacrypto);
-// console.log(pepe.checkTypeData([1]));
-// console.log(pepe);
-const pepa = new Cryptos([{ unobjeto: "paproba" }, unacrypto]);
-// pepa.addCryptos(pepe);
-// console.log("pepa", pepa);
-pepa.setCryptos(unacrypto2);
-const pruebafetch = async () => {
-	// let algo
-	const algo = await pepa.fetchInfo().then(async (jei) => {
-		await pepa.setCryptos(jei);
-		// console.log(jei);
-		// console.log();
-		// console.log(pepa.getCryptos());
-	});
+// const pru1 = new Cryptos();
+// (async () => {
+// 	await pru1.fetchInfo(null,null,0);
+// })();
+// const jei = new Token({name:"gola",address:"id",symbol:"by", network: " ewrf"});
+// const jei = new Token({network:" ", "symbol":2});
+// const jei = new Token();
+// console.log(jei);
+// jei.is
+console.log(Token.getSchema()); 
+// console.log(Coin.getSchema()); 
+console.log(CoinInfo.getSchema())
+console.log(Crypto.getSchema())
 
-	// console.log(algo);
-
-	// console.log(pepa);
-	//
-	//
-};
-
-const coingecko = pruebafetch();
-
-// console.log("pepa2", pepa);
-// console.log(coingecko);
-// console.log(coingecko);
-// await pepa.fetchInfo().then(pepa.setCryptos(coingecko));
-// pepa.setCryptos(coingecko);
-// console.log("pepa2", pepa);
-
-// console.log(pepe.fetchInfo());
-// pepe.fetchInfo();
-// console.log( schemas.cryptos);
-//key is the name of schema
 export const getSchema = (key) => {
 	const schema = { db_type: key };
 	return { ...schema, ...schemas[key] };
 };
-
-// Components Schema List
-// export const getCryptoSchema = () => cryptoSchema;

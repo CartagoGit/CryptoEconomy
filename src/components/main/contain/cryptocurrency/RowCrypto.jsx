@@ -12,11 +12,19 @@ export const RowCrypto = (data) => {
 		price_usd,
 		price_change_percentage
 	} = data;
-	const { _1h, _7d, _14d, _24h, _30d, _200d, _1y } = price_change_percentage;
+	const {
+		_1h = null,
+		_7d = null,
+		_14d = null,
+		_24h = null,
+		_30d = null,
+		_200d = null,
+		_1y = null
+	} = price_change_percentage;
 
-	const changeFiatCurrency = () => {//TODO
-
-	}
+	const changeFiatCurrency = () => {
+		//TODO
+	};
 
 	const getColorPercentage = (num) => {
 		if (num === 0) return null;

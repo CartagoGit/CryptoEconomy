@@ -23,7 +23,7 @@
  */
 
 
-import { isEmptyObject } from "../../helpers/isX.mjs";
+import { isEmptyObject } from "../../helpers/isX.js";
 import { getAllFromCoingeckoByMarket } from "./calls/cryptos/coinGeckoData";
 import { getAllFromPancakeByMarket } from "./calls/tokens/bsc/Pancake/pancakeData";
 

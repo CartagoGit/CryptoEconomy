@@ -1,13 +1,25 @@
-import { isObject } from "../../helpers/isX.mjs";
+import isX from "../../../helpers/isX.js";
 
-export class Crypto {
+export class CoinInfo {
+	/**
+	 * @Statics
+	 */
+	static getSchema = () => {
+		return new this();
+	};
+
+	/**
+	 * @Constructor
+	 */
 	constructor(data = {}) {
-		if (!isObject(data)) return; // if isnt an object, create an empty object
+		//set inheritance
+		// super(data);
+		//Check possible problems and required params
+		if (!!this.error) return;
+
+		//If there arent problems then...
 		const {
-			id, //required -> if object to create crypto havent name create an empty object
-			name, // required too
-			price_usd, //required too
-			symbol, //required too
+			price_usd = null,
 			market_cap = null,
 			market_cap_rank = null,
 			ath = null,
@@ -22,11 +34,8 @@ export class Crypto {
 			total_supply = null,
 			image_url = null
 		} = data;
-		if (!id || !name || !price_usd || !symbol) return; //<- Required params
-		this.id = id;
-		this.name = name;
+
 		this.price_usd = price_usd;
-		this.symbol = symbol;
 		this.market_cap = market_cap;
 		this.market_cap_rank = market_cap_rank;
 		this.ath = ath;
@@ -41,11 +50,9 @@ export class Crypto {
 		this.total_supply = total_supply;
 		this.image_url = image_url;
 		this.price_change_percentage = new PriceChangePercentage(data);
-		this.last_update_unix = Date.now();
-		this.last_update = Date();
+		this.last_update_unix = isX.isEmptyObject(data) ? null : Date.now();
+		this.last_update = isX.isEmptyObject(data) ? null : Date();
 	}
-
-	static getSchema = () => new this();
 }
 
 class PriceChangePercentage {
@@ -57,7 +64,7 @@ class PriceChangePercentage {
 		price_change_percentage_30d = null,
 		price_change_percentage_200d = null,
 		price_change_percentage_1y = null,
-		sparkline_in_7d = null
+		sparkline_in_7d = {}
 	}) {
 		this._1h = price_change_percentage_1h;
 		this._24h = price_change_percentage_24h;
@@ -71,7 +78,8 @@ class PriceChangePercentage {
 }
 
 class Sparkline {
-	constructor(sparkline) {
-		this.price = sparkline.price;
+	constructor(sparkline = {}) {
+		const { price = null } = sparkline;
+		this.price = price;
 	}
 }

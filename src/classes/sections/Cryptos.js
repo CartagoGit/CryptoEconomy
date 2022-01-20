@@ -1,6 +1,7 @@
-import  {getPlataformsMergeMarketData}  from "../../data/getMergeData.js";
-import { isArray, isEmptyObject, isObject } from "../../helpers/isX.mjs";
-import { Crypto } from "../components/crypto.mjs";
+import { getPlataformsMergeMarketData } from "../../data/getMergeData.js";
+import { isNeededAnUpdate } from "../../helpers/classesHelpers.js";
+import { isArray, isEmptyObject, isObject} from "../../helpers/isX.js";
+import { Crypto } from "../components/coins/Crypto.js";
 
 export class Cryptos {
 	last_update_unix = null;
@@ -19,22 +20,22 @@ export class Cryptos {
 
 	constructor(data = null) {
 		if (!this.#isValidData(data)) return;
-		this.addCryptos(data);
+		this.addData(data);
 		this.#isUpdateNecessary && this.#setInfo();
 	}
 
 	static getSchema = () => {
 		return new this();
 	};
-	setCryptos = async (data) => {
+	setData = async (data) => {
 		if (!this.#isValidData(data)) return;
 		const auxList = this.list;
 		this.list = [];
-		await this.addCryptos(data);
-		this.#isUpdateNecessary ? this.#setInfo() : this.list = auxList;
+		await this.addData(data);
+		this.#isUpdateNecessary ? this.#setInfo() : (this.list = auxList);
 	};
 
-	addCryptos = async (data = []) => {
+	addData = async (data = []) => {
 		const type = this.#checkTypeData(data);
 		const typesData = this.#types;
 		if (type === typesData.invalid) return;
@@ -60,7 +61,7 @@ export class Cryptos {
 		}
 	};
 
-	getCryptos = () => this.list;
+	getData = () => this.list;
 
 	clean = () => {
 		this.list = [];
@@ -69,9 +70,23 @@ export class Cryptos {
 		this.amount = null;
 	};
 
-	fetchInfo = async () => {
-		return await getPlataformsMergeMarketData();
+	fetchData = async (
+		updateAnyway = false,
+		minutesSinceLastUpdate = null,
+		secondsSinceLastUpdate = null
+	) => {
+		this.#isUpdateNecessary = updateAnyway;
+		if (
+			!this.#isUpdateNecessary &&
+			isNeededAnUpdate(this.last_update_unix,minutesSinceLastUpdate, secondsSinceLastUpdate)
+		) {
+			return;
+		}
+		this.list = await getPlataformsMergeMarketData();
+		this.#setInfo();
 	};
+
+	
 
 	#setInfo = () => {
 		this.#setAmount();
@@ -86,11 +101,11 @@ export class Cryptos {
 	};
 
 	#checkTypeData = (data) => {
-		this.#isUpdateNecessary = false;	
+		this.#isUpdateNecessary = false;
 		let typeData;
 		const typesData = this.#types;
 		if (!data) typeData = typesData.invalid;
-		else if (isEmptyObject(data)) typeData = typesData.invalid;
+		else if (!isObject || isEmptyObject(data)) typeData = typesData.invalid;
 		else if (isArray(data)) typeData = typesData.array;
 		else if (this.#isCryptosObject(data)) typeData = typesData.cryptos;
 		else if (this.#isCryptoObject(data)) typeData = typesData.crypto;
