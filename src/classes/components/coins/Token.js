@@ -1,6 +1,5 @@
 import { Coin } from "./Coin.js";
 import isX from "../../../helpers/isX.js";
-import { CoinInfo } from "./CoinInfo.js";
 
 export class Token extends Coin {
 	/**

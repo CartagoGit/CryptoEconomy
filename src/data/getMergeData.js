@@ -1,4 +1,5 @@
 import { Crypto } from "../classes/components/coins/Crypto.js";
+import { CryptoInfo } from "../classes/components/coins/CryptoInfo.js";
 import { getAllFromCoingeckoByMarket } from "./RESTs/calls/cryptos/coinGeckoData.js";
 
 //REVIEW hacer un merge de los datos de varias APIs, para empezar usaremos solo la api de CoinGecko
@@ -38,7 +39,7 @@ const convertDataMarketFromCoinGeckoIntoCryptoObject = async (data) => {
 			price_change_percentage_200d:
 				cryptoData.price_change_percentage_200d_in_currency
 		};
-		const cryptoObject = new Crypto(crypto);
+		const cryptoObject = new CryptoInfo(crypto);
 		return cryptoObject;
 	});
 	// console.log(arrayCryptos);

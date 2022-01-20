@@ -56,8 +56,9 @@ export class Coin {
 	 * @Inheritance	  let only errors show in childrens 
 	 */
 	letOnlyErrors = () => {
+		console.log("errors");
 		for (var key in this) {
-			if (key !== "error" && key !== "error_msg") delete this[key];
+			if (key !== "error" && key !== "error_msg" && key !=="letOnlyErrors") delete this[key];
 		}
 	};
 }

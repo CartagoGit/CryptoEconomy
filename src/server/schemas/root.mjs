@@ -9,6 +9,7 @@ import { Token } from "../../classes/components/coins/Token.js";
 import { Coin } from "../../classes/components/coins/Coin.js";
 import { CoinInfo } from "../../classes/components/coins/CoinInfo.js";
 import { Crypto } from "../../classes/components/coins/Crypto.js";
+import { CryptoInfo } from "../../classes/components/coins/CryptoInfo.js";
 
 //Schemas List
 const schemas = {
@@ -28,10 +29,14 @@ const schemas = {
 // const jei = new Token();
 // console.log(jei);
 // jei.is
-console.log(Token.getSchema()); 
-// console.log(Coin.getSchema()); 
-console.log(CoinInfo.getSchema())
-console.log(Crypto.getSchema())
+// console.log(Token.getSchema()); 
+// // console.log(Coin.getSchema()); 
+// console.log(CoinInfo.getSchema())
+// console.log(Crypto.getSchema())
+// console.log(CryptoInfo.getSchema());
+const cryptoInfo = new CryptoInfo({name: "uno", symbol: "otro", id:1});
+// cryptoInfo.muestrAlgo();
+console.log(cryptoInfo );
 
 export const getSchema = (key) => {
 	const schema = { db_type: key };
