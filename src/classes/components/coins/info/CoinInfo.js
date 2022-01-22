@@ -1,4 +1,4 @@
-import isX from "../../../helpers/isX.js";
+import isX from "../../../../helpers/isX.js";
 
 export class CoinInfo {
 	/**
@@ -12,12 +12,6 @@ export class CoinInfo {
 	 * @Constructor
 	 */
 	constructor(data = {}) {
-		//set inheritance
-		// super(data);
-		//Check possible problems and required params
-		if (!!this.error) return;
-
-		//If there arent problems then...
 		const {
 			price_usd = null,
 			market_cap = null,

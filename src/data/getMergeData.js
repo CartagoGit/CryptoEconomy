@@ -1,5 +1,5 @@
-import { Crypto } from "../classes/components/coins/Crypto.js";
-import { CryptoInfo } from "../classes/components/coins/CryptoInfo.js";
+import { CryptoBasic } from "../classes/components/coins/CryptoBasic.js";
+import { CryptoInfo } from "../classes/components/coins/info/CryptoInfo.js";
 import { getAllFromCoingeckoByMarket } from "./RESTs/calls/cryptos/coinGeckoData.js";
 
 //REVIEW hacer un merge de los datos de varias APIs, para empezar usaremos solo la api de CoinGecko

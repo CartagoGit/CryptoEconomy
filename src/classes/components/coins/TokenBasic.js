@@ -1,7 +1,7 @@
-import { Coin } from "./Coin.js";
+import { CoinBasic } from "./CoinBasic.js";
 import isX from "../../../helpers/isX.js";
 
-export class Token extends Coin {
+export class TokenBasic extends CoinBasic {
 	/**
 	 * @Statics
 	 */

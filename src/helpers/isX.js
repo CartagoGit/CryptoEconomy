@@ -18,7 +18,7 @@ export const isEmptyObject = (arg) => {
 
 export const isEmptyArray = (arg) => {
 	if (!isArray(arg)) return false;
-	else return arg.length === 0 ? true : false;
+	return arg.length === 0 ? true : false;
 };
 
 export const isArrayWithEveryEmptyObjects = (arg) => {

@@ -3,5 +3,6 @@
   "amount_cryptos": null,
   "cryptos": [],
   "amount_tokens": null,
-  "tokens": []
+  "amount_networks": null,
+  "networks": []
 }

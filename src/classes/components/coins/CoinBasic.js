@@ -1,6 +1,6 @@
 import isX from "../../../helpers/isX.js";
 
-export class Coin {
+export class CoinBasic {
 	/**
 	 * @Statics
 	 */
@@ -57,7 +57,6 @@ export class Coin {
 	 * @Inheritance	  let only errors show in childrens 
 	 */
 	letOnlyErrors = () => {
-		console.log("errors");
 		for (var key in this) {
 			if (key !== "error" && key !== "error_msg" && key !=="letOnlyErrors") delete this[key];
 		}

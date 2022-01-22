@@ -1,7 +1,7 @@
 import { CoinInfo } from "./CoinInfo.js";
-import { Crypto } from "./Crypto.js";
+import { TokenBasic } from "../TokenBasic.js";
 
-export class CryptoInfo extends Crypto {
+export class TokenInfo extends TokenBasic {
 	/**
 	 * @Statics
 	 */

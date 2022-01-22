@@ -1,7 +1,7 @@
 import { getPlataformsMergeMarketData } from "../../data/getMergeData.js";
 import { isNeededAnUpdate } from "../../helpers/classesHelpers.js";
 import { isArray, isEmptyObject, isObject } from "../../helpers/isX.js";
-import { CryptoInfo } from "../components/coins/CryptoInfo.js";
+import { CryptoInfo } from "../components/coins/info/CryptoInfo.js";
 
 export class Cryptos {
 	last_update_unix = null;

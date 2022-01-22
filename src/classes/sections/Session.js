@@ -23,7 +23,7 @@ export class Session {
 		this.active_page = arg;
 	};
 
-	getActivePAge = () => {
+	getActivePage = () => {
 		return this.active_page;
 	};
 }
