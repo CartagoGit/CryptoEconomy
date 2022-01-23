@@ -17,14 +17,11 @@ export class CryptoBasic extends CoinBasic {
 		super(data);
 		//Check possible problems and required params
 		this.#checkCryptoProblems(data);
-		if (!!this.error) {
-			this.letOnlyErrors();
-			return;
-		}
-		//If there arent problems then...
+
 		const { id = null } = data;
 		this.id = id;
 		this.type_coin = "crypto";
+		if (!!this.error) return this.showOnlyErrors(this);
 	}
 
 	/**

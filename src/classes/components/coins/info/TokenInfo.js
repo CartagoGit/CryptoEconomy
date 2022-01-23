@@ -14,12 +14,7 @@ export class TokenInfo extends TokenBasic {
 	 */
 	constructor(data) {
 		super(data);
-
 		Object.assign(this, new CoinInfo(data)); //Mixin from inheritance multiple
-        // console.log(this);
-        if (!!this.error) {
-			this.letOnlyErrors();
-			return;
-		}
+		if (!!this.error) return this.showOnlyErrors(this);
 	}
 }

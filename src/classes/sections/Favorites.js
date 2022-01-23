@@ -1,7 +1,7 @@
 import isX from "../../helpers/isX.js";
-import { ListBasicCoins } from "./../components/lists/ListBasicCoins.js";
+import { ListCoinsBasic } from "../components/lists/ListCoinsBasic.js";
 
-export class Favorites extends ListBasicCoins {
+export class Favorites extends ListCoinsBasic {
 	/**
 	 * @Statics
 	 */

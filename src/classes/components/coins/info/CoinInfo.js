@@ -46,6 +46,7 @@ export class CoinInfo {
 		this.price_change_percentage = new PriceChangePercentage(data);
 		this.last_update_unix = isX.isEmptyObject(data) ? null : Date.now();
 		this.last_update = isX.isEmptyObject(data) ? null : Date();
+		if (!!this.error) return this.showOnlyErrors(this);
 	}
 }
 

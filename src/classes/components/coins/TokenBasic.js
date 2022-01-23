@@ -17,15 +17,13 @@ export class TokenBasic extends CoinBasic {
 		super(data);
 		//Check possible problems and required params
 		this.#checkTokenProblems(data);
-		if (!!this.error) {
-			this.letOnlyErrors();
-			return;
-		}
+
 		//If there arent problems then...
 		const { network = null, address = null } = data;
 		this.address = address;
 		this.network = network;
 		this.type_coin = "token";
+		if (!!this.error) return this.showOnlyErrors(this);
 	}
 
 	/**

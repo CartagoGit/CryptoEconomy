@@ -3,7 +3,7 @@ import { CryptoBasic } from "../coins/CryptoBasic.js";
 import { TokenBasic } from "../coins/TokenBasic.js";
 import { NetworkBasic } from "../networks/NetworkBasic.js";
 
-export class ListBasicCoins {
+export class ListCoinsBasic {
 	/**
 	 * @Statics
 	 */
@@ -39,11 +39,11 @@ export class ListBasicCoins {
 		if (!isX.isObject(data)) return;
 		const { cryptos = [], networks = [] } = data;
 		this.cryptos = [...cryptos];
-		this.tnetworks = [...networks];
+		this.networks = [...networks];
 		this.setInfo();
 	};
 
-    //TODO Check in Blacklist, when Blacklist object will be created
+	//TODO Check in Blacklist, when Blacklist object will be created
 	addCrypto = (data) => {
 		if (this.areThereErrorsInCryptos(data)) return;
 		this.cryptos.push(this.getCryptoObject(data));
@@ -63,7 +63,7 @@ export class ListBasicCoins {
 			});
 			this.cryptos = newArray;
 		}
-		if (this.isCryptoObject) {
+		if (this.isCryptoObject(data)) {
 			const newArray = this.cryptos.filter((element) => {
 				if (
 					element.id.toString().toLowerCase() !==
@@ -109,16 +109,15 @@ export class ListBasicCoins {
 			token = new (this.getTokenClass())(data);
 			if (token.error) return;
 		}
-
 		const index = this.networks.findIndex(
 			(element) => element.network === token.network
 		);
 		if (index === -1) {
-			const net = new (this.getNetworkClass())(data);
+			const net = new (this.getNetworkClass())(token);
 			if (net.error) return;
 			this.networks.push(net);
 		} else {
-			this.networks[index].addToken(data);
+			this.networks[index].addToken(token);
 		}
 		this.setInfo();
 	};
@@ -144,20 +143,17 @@ export class ListBasicCoins {
 			const auxArray = this.networks[i].tokens;
 			tokensArray = [...tokensArray, ...auxArray];
 		}
-
 		return tokensArray;
 	};
 
 	getTokenByAddressSymbolOrNameFromNetwork = (data, network) => {
 		if (!isX.isString(data)) return;
-
 		const lowerNet = network.toString().toLowerCase();
 		const net = this.networks.find((elem) => {
 			if (elem.network.toString().toLowerCase() === lowerNet) return elem;
 		});
 		if (!net) return;
 		const lowerData = data.toString().toLowerCase();
-		// this.elements.tokens;
 		const element = net.tokens.find((elem) => {
 			if (
 				elem.address.toString().toLowerCase() === lowerData ||
