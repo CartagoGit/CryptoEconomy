@@ -1,4 +1,4 @@
-import isX from "../../../helpers/isX.js";
+import isX from "../../../../src/helpers/isX.js";
 
 export class CoinBasic {
 	/**
@@ -14,7 +14,7 @@ export class CoinBasic {
 	constructor(data = {}) {
 		//Check possible problems and required params
 		this.#checkCoinProblems(data);
-	
+
 		const {
 			name = null,
 			symbol = null,

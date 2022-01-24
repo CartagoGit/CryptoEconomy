@@ -1,4 +1,4 @@
-import { ListTokens } from './../lists/ListTokens.js';
+import { ListTokens } from '../lists/ListTokens.js';
 
 
 export class NetworkBasic extends ListTokens {

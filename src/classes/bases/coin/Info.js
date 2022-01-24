@@ -1,19 +1,10 @@
-import isX from "../../../../helpers/isX.js";
-
-export class CoinInfo {
-	/**
-	 * @Statics
-	 */
-	static getSchema = () => {
-		return new this();
-	};
-
+export class Info {
 	/**
 	 * @Constructor
 	 */
 	constructor(data = {}) {
 		const {
-			price_usd = null,
+
 			market_cap = null,
 			market_cap_rank = null,
 			ath = null,
@@ -26,10 +17,12 @@ export class CoinInfo {
 			circulating_supply = null,
 			max_supply = null,
 			total_supply = null,
-			image_url = null
+			image_url = null,
+			last_update = null,
+			last_update_unix = null
 		} = data;
 
-		this.price_usd = price_usd;
+
 		this.market_cap = market_cap;
 		this.market_cap_rank = market_cap_rank;
 		this.ath = ath;
@@ -43,10 +36,9 @@ export class CoinInfo {
 		this.max_supply = max_supply;
 		this.total_supply = total_supply;
 		this.image_url = image_url;
-		this.price_change_percentage = new PriceChangePercentage(data);
-		this.last_update_unix = isX.isEmptyObject(data) ? null : Date.now();
-		this.last_update = isX.isEmptyObject(data) ? null : Date();
-		if (!!this.error) return this.showOnlyErrors(this);
+		Object.assign(this, new PriceChangePercentage(data));
+		this.last_update_unix = !!last_update_unix ? last_update_unix : Date.now();
+		this.last_update = !!last_update ? last_update : Date();
 	}
 }
 
@@ -68,7 +60,7 @@ class PriceChangePercentage {
 		this._30d = price_change_percentage_30d;
 		this._200d = price_change_percentage_200d;
 		this._1y = price_change_percentage_1y;
-		this.sparkline_in_7d = new Sparkline(sparkline_in_7d);
+		Object.assign(this, new Sparkline(sparkline_in_7d))
 	}
 }
 

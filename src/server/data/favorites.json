@@ -1,8 +1,3 @@
 {
-  "db_type": "favorites",
-  "amount_cryptos": null,
-  "cryptos": [],
-  "amount_tokens": null,
-  "amount_networks": null,
-  "networks": []
+  "db_type": "favorites"
 }

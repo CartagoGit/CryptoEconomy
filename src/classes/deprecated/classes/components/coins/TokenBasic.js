@@ -1,5 +1,5 @@
 import { CoinBasic } from "./CoinBasic.js";
-import isX from "../../../helpers/isX.js";
+import isX from "../../../../src/helpers/isX.js";
 
 export class TokenBasic extends CoinBasic {
 	/**

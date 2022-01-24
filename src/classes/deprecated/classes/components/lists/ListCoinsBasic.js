@@ -1,4 +1,4 @@
-import isX from "../../../helpers/isX.js";
+import isX from "../../../../src/helpers/isX.js";
 import { CryptoBasic } from "../coins/CryptoBasic.js";
 import { TokenBasic } from "../coins/TokenBasic.js";
 import { NetworkBasic } from "../networks/NetworkBasic.js";

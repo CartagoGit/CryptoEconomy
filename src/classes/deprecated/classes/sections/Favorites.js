@@ -1,4 +1,4 @@
-import isX from "../../helpers/isX.js";
+import isX from "../../../src/helpers/isX.js";
 import { ListCoinsBasic } from "../components/lists/ListCoinsBasic.js";
 
 export class Favorites extends ListCoinsBasic {

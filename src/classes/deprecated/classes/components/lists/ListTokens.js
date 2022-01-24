@@ -1,4 +1,4 @@
-import isX from "../../../helpers/isX.js";
+import isX from "../../../../src/helpers/isX.js";
 import { TokenBasic } from "../coins/TokenBasic.js";
 
 export class ListTokens {
